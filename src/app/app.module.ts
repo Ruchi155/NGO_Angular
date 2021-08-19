@@ -9,6 +9,7 @@ import { ProfileManagementComponent } from './profile-management/profile-managem
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     UsersComponent,
     ProfileManagementComponent,
     UpdateProfileComponent,
-    HomepageComponent
+    HomepageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
