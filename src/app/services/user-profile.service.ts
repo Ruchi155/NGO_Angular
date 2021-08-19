@@ -18,10 +18,13 @@ export class UserProfileService {
     return throwError(error.message || "Server Error")
   }
   getUserProfileById(id:number):Observable<iUserProfile>{
-    return this.http.get<iUserProfile>(this.url+ +id);
+    return this.http.get<iUserProfile>(this.url+ "findprofile/"+id);
   }
   deleteUserProfileById(id:number){
     return this.http.delete(this.url+"deleteprofile/"+id);
+  }
+  updateUserProfile (id:number, profile:iUserProfile):Observable<iUserProfile>{
+    return this.http.put<iUserProfile >(this.url+"updateprofile/"+id , profile);
   }
 
 }

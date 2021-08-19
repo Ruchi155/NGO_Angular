@@ -25,4 +25,8 @@ export class ProfileManagementComponent implements OnInit {
       ()=> console.log("Completed")
     )
   }
+  onUpdateButton(userProfile:any){
+    console.log("Open the modification form by navigattion")
+    this.router.navigate(['/profiles/update',userProfile.id] );
+  }
 }

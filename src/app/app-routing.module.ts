@@ -12,7 +12,7 @@ const routes: Routes = [
     path:'profiles', component: ProfileManagementComponent
   },
   {
-    path:'profile/update', component:UpdateProfileComponent
+    path:'profiles/update/:id', component:UpdateProfileComponent
   }
 ];
 
