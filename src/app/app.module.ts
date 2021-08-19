@@ -8,13 +8,15 @@ import { UsersComponent } from './users/users.component';
 import { ProfileManagementComponent } from './profile-management/profile-management.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     ProfileManagementComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
