@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +9,7 @@ import { ProfileManagementComponent } from './profile-management/profile-managem
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { HomepageComponent } from './homepage/homepage.component';
+ 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -18,13 +19,17 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+ 
+import { LoginComponent } from './login/login.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     ProfileManagementComponent,
     UpdateProfileComponent,
-    HomepageComponent
+    HomepageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
