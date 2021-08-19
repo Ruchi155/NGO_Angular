@@ -1,1 +1,21 @@
-<app-users></app-users>
+<!--<h1>Hello</h1>-->
+
+<!--<app-test></app-test> -->
+<!--<app-employeelist></app-employeelist> -->
+
+
+<div style="background-color: #c5c5ee; height:30px; padding: 1rem;">
+    <nav>
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+        &nbsp; | &nbsp;
+        <a routerLink="/user" routerLinkActive="active">User View/a>
+        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <a routerLink="/login" routeLinkActive="active">Login</a>
+       &nbsp; | &nbsp;
+       <a routerLink="/logout" (click)="logout()">Logout</a>
+       
+       
+    </nav>
+</div>
+
+<router-outlet></router-outlet>

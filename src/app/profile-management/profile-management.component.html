@@ -1,0 +1,51 @@
+<table border="1" align="center" class="table table-danger table-striped table-bordered">
+
+    <tr>
+        <th> ID </th>
+        <th>
+            Address1
+        </th>
+        <th>
+            Address2
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            State
+        </th>
+        <th>
+            Zipcode
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            *Urbaniztion
+        </th>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let p of profiles ">
+            <td>
+                {{p.id}}
+
+            </td>
+            <td> {{p.address1 }}</td>
+            <td> {{p.address2}}</td>
+            <td> {{p.phone}}</td>
+            <td> {{p.city}}</td>
+            <td> {{p.state}} </td>
+            <td> {{p.zipcode}} </td>
+            <td> {{p.country}}</td>
+            <td> {{p.urbanization}}</td>
+            <td>
+                <button> Update</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

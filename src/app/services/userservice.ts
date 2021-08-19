@@ -10,24 +10,24 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-  private apiServerUrl= environment.apiBaseUrl;
+  private apiServerUrl= environment.apiUserUrl;
 
   constructor(private http: HttpClient) { }
 
   public getUsers():Observable<Users[]>{
-    return this.http.get<Users[]>(`${this.apiServerUrl}/ngodonation/all`);
+    return this.http.get<Users[]>(`${this.apiServerUrl}/`);
   }
 
   public addUser(user: Users):Observable<Users>{
-    return this.http.post<Users>(`${this.apiServerUrl}/ngodonation/add`,user);
+    return this.http.post<Users>(`${this.apiServerUrl}/adduser`,user);
   }
 
   public updateUser(user:Users):Observable<Users>
   {
-    return this.http.put<Users>(`${this.apiServerUrl}/ngodonation/update`,user)
+    return this.http.put<Users>(`${this.apiServerUrl}/updateuser`,user)
   }
 
   public deleteUser(userid:number):Observable<void>{
-    return this.http.delete<void>(`${this.apiServerUrl}/ngodonation/delete/${userid}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/deleteuser/${userid}`);
   }
 }

@@ -1,5 +1,5 @@
 <h1 align="center">User Management</h1>
-<table border =1 align="center">
+<table border="1" align="center">
     <tr>
         <td align="center">Id</td>
         <td align="center">FirstName</td>
@@ -9,13 +9,19 @@
     </tr>
 
     <tr *ngFor="let user of users">
+
         <td  align="center">{{user.id}}</td>
         <td  align="center">{{user.firstName}}</td>
         <td  align="center">{{user.lastName}}</td>
         <td  align="center">{{user.email}}</td>
         <td  align="center">{{user.password}}</td>
         
+        <td align="center">{{user.id}}</td>
+        <td align="center">{{user.firstName}}</td>
+        <td align="center">{{user.lastName}}</td>
+        <td align="center">{{user.email}}</td>
+        <td align="center">{{user.password}}</td>
     </tr>
 
-    
+
 </table>
