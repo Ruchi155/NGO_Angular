@@ -1,19 +1,62 @@
-<!--<h1>Hello</h1>-->
+<!-- 
+<div class="container text-center mt-5 mb-5 ">
+    <h1> Boostrap is working fine</h1>
+    <app-users></app-users>
+    <app-profile-management></app-profile-management>
+</div> -->
 
-<!--<app-test></app-test> -->
-<!--<app-employeelist></app-employeelist> -->
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <strong class="fs-5 d-none d-sm-inline">NGO Donation</strong>
+                </a>
+                <style>
+                    .nav-link {
+                        color: white;
+                    }
+                    
+                    .nav-item>a:hover {
+                        color: red;
+                    }
+                    /*code to change background color*/
+                    
+                    .nav-item>a:hover {
+                        color: aqua;
+                    }
+                </style>
+                <ul class="nav   navbar-nav  nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item   ">
+                        <button href="#" class=" btn nav-link    " routerLink="/homepage">
+                            <i class="fs-4 bi-house"></i> <span class="sr-only ms-1 d-none d-sm-inline">Home</span>
+                        </button>
+                    </li>
+
+                    <li class="nav-item  ">
+                        <button href="#" class="  btn  nav-link   " routerLink="/profiles">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Profile</span></button>
+                    </li>
 
 
-<div style="background-color: #c5c5ee; height:30px; padding: 1rem;">
-    <nav>
-        <a routerLink="/home" routerLinkActive="active">Home</a> &nbsp; | &nbsp;
-        <a routerLink="/user" routerLinkActive="active">User View/a>
-        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <a routerLink="/login" routeLinkActive="active">Login</a> &nbsp; | &nbsp;
-        <a routerLink="/logout" (click)="logout()">Logout</a>
+                </ul>
+                <script>
+                    $(document).ready(function() {
 
+                        $('ul.navbar-nav > li')
+                            .click(function(e) {
+                                $('ul.navbar-nav > li')
+                                    .removeClass('active');
+                                $(this).addClass('active');
+                            });
+                    });
+                </script>
+                <hr>
 
-    </nav>
+            </div>
+        </div>
+        <div class="col py-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
-
-<router-outlet></router-outlet>

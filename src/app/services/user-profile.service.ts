@@ -24,6 +24,7 @@ export class UserProfileService {
     return this.http.delete(this.url+"deleteprofile/"+id);
   }
   updateUserProfile (id:number, profile:iUserProfile):Observable<iUserProfile>{
+    console.log(this.url+"updateprofile/"+id , profile);
     return this.http.put<iUserProfile >(this.url+"updateprofile/"+id , profile);
   }
 
