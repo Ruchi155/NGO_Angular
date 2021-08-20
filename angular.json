@@ -77,6 +77,10 @@
                         },
                         "development": {
                             "browserTarget": "NGO-Donation:build:development"
+                        },
+                        "options": {
+                            "browserTarget": "NGO-Donation:build",
+                            "proxyConfig": "proxy.config.json"
                         }
                     },
                     "defaultConfiguration": "development"
