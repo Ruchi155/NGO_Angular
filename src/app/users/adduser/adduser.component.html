@@ -1,0 +1,40 @@
+<div class="container">
+    
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<div>
+    <div>
+        <label for="id">ID</label><br/>
+        <input type="text" id="id" name="id" [(ngModel)]="id">
+    </div> 
+        
+    <div>
+        <label for="firstName">FirstName</label>   <br/>
+        <input type="text" id="firstName" name="firstName" [ngModel]="firstName">
+    </div>
+            
+        
+    <div>
+        <label for="lastName">lastName</label>  <br/> 
+        <input type="text" id="lastName" name="lastName" [ngModel]="lastName">
+    </div>
+
+    <div>
+        <label for="email">Email</label>  <br/> 
+        <input type="text" id="email" name="email" [ngModel]="email">
+    </div>
+            
+     <!--
+    <div>
+        <label for="rolename">Department</label>  <br/> 
+        <input type="text" id="rolename" name="department" [ngModel]="rolename">
+    </div>
+-->
+        
+    <div>       
+    <button type="submit" [disabled]="!f.valid">Submit</button>
+    </div>
+  
+</div>
+</form> 
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,74 @@
+
+<br>
+<br><h4 align="center">User Management</h4>
+<table border="2" align="center">
+    <tr>
+        <td align="center">Id</td>
+        <td align="center">FirstName</td>
+        <td align="center">LastName</td>
+        <td align="center">Email </td>
+        <td align="center">Options</td>
+    </tr>
+
+    <tr *ngFor="let user of users">
+
+        <td  align="center">{{user.id}}</td>
+        <td  align="center">{{user.firstName}}</td>
+        <td  align="center">{{user.lastName}}</td>
+        <td  align="center">{{user.email}}</td>
+        <!--<td  align="center">{{role.name}}</td> -->
+        <td align="center" appCustomdir><button type= "button" class="btn btn-edit">Edit</button></td>
+        <td align="center"><button type= "button" class="btn btn-delete" >Delete</button></td>
+       
+    </tr>
+
+
+</table><div align="center">
+    <br>
+    <br>
+    <button routerLink="/users/adduser">Add New Employee</button>
+</div>
+<!-- <div style="overflow: auto" >
+<div class="mat-elevation-z8">
+
+listData and displayedColumns loop come from the userlist.ts file
+    <mat-table [dataSource] ="listData">
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:displayedColumns;"></mat-row>
+
+        <ng-container matColumnDef="id">
+            <mat-header-cell *metHeaderCellDef>Id</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ user.id }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+            <mat-header-cell *metHeaderCellDef>FirstName</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ user.firstName }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lastName">
+            <mat-header-cell *metHeaderCellDef>LastName</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ user.lastName }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <mat-header-cell *metHeaderCellDef>Email</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ user.email }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Options">
+            <mat-header-cell *metHeaderCellDef>Id</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button mat-icon-button click()="onEdit(row)">
+                    launch  and deleteoutline  are the symbol name from angular material icon
+                    <mat-icon>launch</mat-icon> 
+                </button>
+                <button mat-icon-button color="warn" click()="onDelete(row.Id)">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+        
+    </mat-table>
+</div>
+
+</div> -->
+<router-outlet></router-outlet>
