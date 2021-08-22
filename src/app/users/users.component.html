@@ -1,11 +1,20 @@
-<h1 align="center">User Management</h1>
-<table border="1" align="center">
+
+<!-- <ng-container matColumnDef="id" mat-sort-header>
+    <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+    
+</ng-container>
+
+
+
+<br>
+<br><h4 align="center">User Management</h4>
+<table border="2" align="center">
     <tr>
         <td align="center">Id</td>
         <td align="center">FirstName</td>
         <td align="center">LastName</td>
         <td align="center">Email </td>
-        <td align="center">Password</td>
+        <td align="center">Role</td>
     </tr>
 
     <tr *ngFor="let user of users">
@@ -14,14 +23,16 @@
         <td  align="center">{{user.firstName}}</td>
         <td  align="center">{{user.lastName}}</td>
         <td  align="center">{{user.email}}</td>
-        <td  align="center">{{user.password}}</td>
-        
-        <td align="center">{{user.id}}</td>
-        <td align="center">{{user.firstName}}</td>
-        <td align="center">{{user.lastName}}</td>
-        <td align="center">{{user.email}}</td>
-        <td align="center">{{user.password}}</td>
+        <td  align="center">{{role.name}}</td>
+       
     </tr>
 
 
 </table>
+
+<button type="button" class="btn btn-success">AddUSer</button>
+
+ -->
+
+ <app-userlist>
+     </app-userlist>

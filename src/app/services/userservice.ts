@@ -14,17 +14,24 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  formData!: Users;
+
+  public getUser(id:number): Observable<any>
+  {
+    return this.http.get(`${this.apiServerUrl}/${id}`)
+  }
+  
   public getUsers():Observable<Users[]>{
     return this.http.get<Users[]>(`${this.apiServerUrl}/`);
   }
 
-  public addUser(user: Users):Observable<Users>{
-    return this.http.post<Users>(`${this.apiServerUrl}/adduser`,user);
+  public addUser(user: Users):Observable<any>{
+    return this.http.post(`${this.apiServerUrl}/adduser`,user);
   }
 
   public updateUser(user:Users):Observable<Users>
   {
-    return this.http.put<Users>(`${this.apiServerUrl}/updateuser`,user)
+    return this.http.put<Users>(`${this.apiServerUrl}/updateuser`,user);
   }
 
   public deleteUser(userid:number):Observable<void>{

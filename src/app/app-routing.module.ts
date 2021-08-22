@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DonationsComponent } from './donations/donations.component';
+import { HomeComponent } from './home/homepage.component';
+import { LoginComponent } from './login/login.component';
+import { PagenotFoundComponent } from './pagenot-found-component/pagenot-found-component.component';
 import { ProfileManagementComponent } from './profile-management/profile-management.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { AdduserComponent } from './users/adduser/adduser.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  {
-    path:'homepage',component: HomepageComponent
-  },
-  {
-    path:'profiles', component: ProfileManagementComponent
-  },
-  {
-    path:'profile/update', component:UpdateProfileComponent
-  }
+  { path:'home',component: HomeComponent },
+  {path:'profiles', component: ProfileManagementComponent},
+  { path:'profile/update', component:UpdateProfileComponent},
+  {path:'users', component: UsersComponent },
+  {path:'users/adduser', component: AdduserComponent},
+  {path:'login', component: LoginComponent},
+  {path:'donations',component: DonationsComponent},
+  //{path:"**", component: PagenotFoundComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-
-
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

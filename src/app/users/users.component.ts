@@ -14,15 +14,18 @@ export class UsersComponent implements OnInit {
   constructor(private userserv:UserService) { }
 
   ngOnInit() {
-    this.getUsers();
+    //this.getUsers();
   }
 
-  public getUsers():void{
+ /*  public getUsers():void{
     this.userserv.getUsers().subscribe(
     (response: Users[]) => {
       this.users =response; },
     (error:HttpErrorResponse) => {
       alert(error.message);}
     );
-    }
+    } */
+
+    
+    
 }
