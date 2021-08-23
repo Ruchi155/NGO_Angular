@@ -12,6 +12,7 @@ export class UserProfileService
  {
   private url = environment.apiProfileUrl;
   constructor(private http:HttpClient) { }
+  
   getAllUserProfiles():Observable<iUserProfile[]>{
     return this.http.get<iUserProfile[]>(this.url).pipe(catchError(this.errorHandler));
   }  

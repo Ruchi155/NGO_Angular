@@ -1,7 +1,7 @@
 import { DonationType } from "./donationtype";
 import { Users } from "./users";
 
-export class Donation { 
+export class Donation{ 
 
 	private  id:number = 0;  
 	private  date : Date = new Date(); 

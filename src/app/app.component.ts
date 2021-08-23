@@ -1,4 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthguardService } from './services/authservice';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +9,16 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'NGO-Donation';
-  logout(){
-    
+  
+constructor(private authserv: AuthguardService,private route: Router){
+
+}
+  public logout()
+  {
+    this.authserv.logoutUser();
+    this.route.navigate(['/home']);
   }
+
 }
 
   

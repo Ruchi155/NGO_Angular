@@ -1,0 +1,29 @@
+
+<br>
+<br>
+<table border="1" align="center" class="table table-danger table-striped table-bordered">
+
+    <tr>
+        <th> ID </th>
+        <th> Date</th>
+        <th>Amount</th>
+        <th>DonationType</th>
+        <th>UserID</th>  
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let d of donations">
+            <td>{{d.id}} </td>
+            <td> {{d.date}}</td>
+            <td> {{d.amount }}</td>
+            <td> {{d.donationType?.name}} </td>
+            <td> {{d.user?.id}}</td> 
+            <td> <button> Update</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<router-outlet>
+
+</router-outlet>

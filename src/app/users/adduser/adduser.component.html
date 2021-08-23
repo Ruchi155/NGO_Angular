@@ -30,14 +30,16 @@
         <input type="text" id="rolename" name="department" [ngModel]="rolename">
     </div>
 -->
-<div>
+
+div>
     <label for="role">Role</label>  
 <select [(ngModel)]= "roleId">
     <option *ngFor="let role of role" value="{{role.id}}">{{role.name}}</option>
-    s
+    
 </select>
     <p>{{roleId}}</p>
 </div>      
+
 <br>
 <br>
     <div>       
@@ -46,7 +48,6 @@
   
 </div>
 </form> 
-
 
 
 </div>

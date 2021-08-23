@@ -22,13 +22,10 @@ import { PagenotFoundComponent } from './pagenot-found-component/pagenot-found-c
 import { DonationsComponent } from './donations/donations.component';
 import { ProfileManagementComponent } from './profile-management/profile-management.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
-import { DeletedonationComponent } from './donations/deletedonation/deletedonation.component';
-import { UpdatedonationComponent } from './donations/updatedonation/updatedonation.component';
-import { AdddonationComponent } from './donations/adddonation/adddonation.component';
 import { FormsModule } from '@angular/forms';
 import { UserlistComponent } from './users/userlist/userlist.component';
-import { DonationslistComponent } from './donationslist/donationslist.component';
 import { UpdateuserComponent } from './users/updateuser/updateuser.component';
+import { DonationlistComponent } from './donations/donationlist/donationlist.component';
 
 @NgModule({
   declarations: [
@@ -42,24 +39,20 @@ import { UpdateuserComponent } from './users/updateuser/updateuser.component';
     DonationsComponent,
     AdduserComponent,
     UpdateuserComponent,
-    DeletedonationComponent,
-    UpdatedonationComponent,
-    AdddonationComponent,
     UserlistComponent,
-    DonationslistComponent,
+    DonationlistComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
-    FormsModule,FormsModule, BrowserAnimationsModule,    MatToolbarModule,
+    FormsModule, BrowserAnimationsModule,    MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatButtonModule,
     MatCardModule,
-    MatTableModule,
-    FormsModule,
+    MatTableModule, 
 
   ],
   providers: [],

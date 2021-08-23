@@ -51,11 +51,11 @@ export class AdduserComponent implements OnInit {
     (error) => console.log(error)
     )
      
-    this.userserv.getRoleName(userForm.value).subscribe(
+   /*  this.userserv.getRoleName(userForm.value).subscribe(
       data1=> {
         this.roleId=data1;
       }
-    )
+    ) */
 
     this.router.navigate(['users']);
     //this.empForm.reset();

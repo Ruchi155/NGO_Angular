@@ -10,7 +10,6 @@ export class Users{
     lastName: string;
     email: string;
     password: string;
-    rolename!: string;
     userProfile!: iUserProfile;
     
     roles!: Array<Role>;
