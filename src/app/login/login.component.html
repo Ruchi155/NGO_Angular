@@ -1,5 +1,6 @@
-<h3>Login Form</h3>
- 
+
+<br><h3>Login Form</h3>
+<!--
 <div>
  <form #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
    <p>User Name: <input type='text'  name='username' ngModel></p>
@@ -7,3 +8,18 @@
    <p><button type="submit">Submit</button></p> 
  </form>
 </div> 
+<br>
+<div class="container">
+  <form #loginform="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email">
+  </div><br>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" [(ngModel)]="user.password">
+  </div><br>
+  
+  <button type="submit" class="btn btn-info">Login</button>
+</form>
+</div>-->

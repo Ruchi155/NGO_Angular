@@ -31,10 +31,11 @@
     </div>
 -->
 
-div>
+
     <label for="role">Role</label>  
-<select [(ngModel)]= "roleId">
-    <option *ngFor="let role of role" value="{{role.id}}">{{role.name}}</option>
+    <!-- <select [(ngModel)] = "{{user.roles}}"> -->
+<select [(ngModel)]="roleId" [ngModelOptions]="{standalone: true}">
+    <option *ngFor="let role of role" value="{{role.name}}">{{role.id}}</option>
     
 </select>
     <p>{{roleId}}</p>
@@ -46,7 +47,7 @@ div>
     <button type="submit" [disabled]="!f.valid">Submit</button>
     </div>
   
-</div>
+
 </form> 
 
 

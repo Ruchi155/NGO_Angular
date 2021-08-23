@@ -10,8 +10,7 @@ export class Users{
     lastName: string;
     email: string;
     password: string;
-    userProfile!: iUserProfile;
-    
+    userProfile!: iUserProfile; 
     roles!: Array<Role>;
 
      constructor(id:number,firstName: string, lastName:string,email:string, password:string,userProfile: iUserProfile, roles:Array<Role >)
@@ -25,5 +24,4 @@ export class Users{
         this.roles = roles;
 
     }
-
 }
