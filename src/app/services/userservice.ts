@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http'
 import { Users } from '../models/users';
 import { environment } from 'src/environments/environment';
+import { Role } from '../models/role';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class UserService {
 
   formData!: Users;
 
-  public getUser(id:number): Observable<any>
+  public getUserById(id:number): Observable<any>
   {
     return this.http.get(`${this.apiServerUrl}/${id}`)
   }
@@ -36,5 +37,10 @@ export class UserService {
 
   public deleteUser(userid:number):Observable<void>{
     return this.http.delete<void>(`${this.apiServerUrl}/deleteuser/${userid}`);
+  }
+
+  public getRoleName(role:Role):Observable<any>
+  {
+    return this.http.post(`${this.apiServerUrl}/adduser`,role);
   }
 }

@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileManagementComponent } from './profile-management/profile-management.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
+import { UpdateuserComponent } from './users/updateuser/updateuser.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path:'profile/update', component:UpdateProfileComponent},
   {path:'users', component: UsersComponent },
   {path:'users/adduser', component: AdduserComponent},
+  {path:'users/updateuser/id', component:UpdateuserComponent},
   {path:'login', component: LoginComponent},
   {path:'donations',component: DonationsComponent},
   {

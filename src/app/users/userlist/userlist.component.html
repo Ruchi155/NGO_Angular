@@ -7,7 +7,10 @@
         <td align="center">FirstName</td>
         <td align="center">LastName</td>
         <td align="center">Email </td>
+        <td align="center">Role </td>
+        <td align="center">ProfileID </td>
         <td align="center">Options</td>
+        
     </tr>
 
     <tr *ngFor="let user of users">
@@ -16,18 +19,27 @@
         <td  align="center">{{user.firstName}}</td>
         <td  align="center">{{user.lastName}}</td>
         <td  align="center">{{user.email}}</td>
+        
+        <td align="center">
+            <tr *ngFor="let r of user.roles">
+                <td align="center">{{r?.name}}</td>
+            </tr>
+        </td>
+        <td align="center">{{user.userProfile?.id}}</td>
+    
+
         <!--<td  align="center">{{role.name}}</td> -->
-        <td align="center" appCustomdir><button type= "button" class="btn btn-edit">Edit</button></td>
-        <td align="center"><button type= "button" class="btn btn-delete" >Delete</button></td>
+        <td align="center" appCustomdir><button type= "button" class="btn btn-edit" routerLink="/users/updateuser/id">Edit</button></td>
+        <td align="center"><button type= "button" class="btn btn-delete"  (click)="deleteUser(user.id)">Delete</button></td>
        
     </tr>
 
 
-</table><div align="center">
+</table>
     <br>
     <br>
-    <button routerLink="/users/adduser">Add New Employee</button>
-</div>
+    <button routerLink="/users/adduser">Add New User</button>
+
 <!-- <div style="overflow: auto" >
 <div class="mat-elevation-z8">
 
@@ -71,4 +83,5 @@ listData and displayedColumns loop come from the userlist.ts file
 </div>
 
 </div> -->
+
 <router-outlet></router-outlet>

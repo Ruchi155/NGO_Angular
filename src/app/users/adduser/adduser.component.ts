@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Role } from 'src/app/models/role';
 import { UserService } from 'src/app/services/userservice';
 
 @Component({
@@ -30,6 +31,10 @@ export class AdduserComponent implements OnInit {
     alert(data);
   }) 
 }*/
+
+//For Dropdown
+  public role: Array<Role> = [{id:1,name:'Admin'},{id:2,name:'User'}];
+  public roleId!: number;
   
   onSubmit(userForm:any){
   console.log(userForm.value);
@@ -42,7 +47,14 @@ export class AdduserComponent implements OnInit {
         (error) => this.errorMsg = error
       )
     },
+    
     (error) => console.log(error)
+    )
+     
+    this.userserv.getRoleName(userForm.value).subscribe(
+      data1=> {
+        this.roleId=data1;
+      }
     )
 
     this.router.navigate(['users']);
@@ -50,6 +62,7 @@ export class AdduserComponent implements OnInit {
   
   }
 
+  
 
 
 }

@@ -6,7 +6,11 @@ export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:8090',
   apiProfileUrl: 'http://localhost:8090/profiles/',
-  apiUserUrl: 'http://localhost:8090/users'
+  apiUserUrl: 'http://localhost:8090/users',
+  
+  apiDonationUrl:'http://localhost:8090/donations/',
+  apiDonationTypeUrl:'http://localhost:8090/donationTypes/'
+
 };
 
 /*

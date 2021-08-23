@@ -20,10 +20,10 @@
         </div>
         <div class="form-group">
             <label>CMA</label>
-            <input type="text" #CMA="ngModel" required class="form-control" name="CMA" [class.is-invalid]="CMA.invalid && CMA.touched" [(ngModel)]="userProfile.CMA">
-            <div *ngIf="CMA.touched && CMA.errors">
+            <input type="text" #cma="ngModel" class="form-control" name="cma" [(ngModel)]="userProfile.cma">
+            <!-- <div *ngIf="CMA.touched && CMA.errors">
                 <div class="alert alert-danger" *ngIf="CMA.errors.required">CMA is required</div>
-            </div>
+            </div> -->
         </div>
         <div class="form-group">
             <label>phone</label>
@@ -53,6 +53,11 @@
                 <div class="alert alert-danger" *ngIf="country.errors.required">country is required</div>
             </div>
         </div>
+        <div class="form-group">
+            <label>Urbanization</label>
+            <input type="text" #urbanization="ngModel" class="form-control" name="urbanization" [(ngModel)]="userProfile.urbanization">
+
+        </div>
 
         <button mat-flat-button color="accent" [disabled]="updateProfileForm.form.invalid" type="submit">Update form</button>
     </form>
@@ -62,8 +67,3 @@
 <div class="alert alert-danger" *ngIf="errorMsg">
     {{errorMsg}}
 </div>
-
-
-<router-outlet>
-    
-</router-outlet>

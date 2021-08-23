@@ -1,4 +1,9 @@
-export class role{
-    id!:number;
-    rolename!:string;
+export class Role{
+    id: number = 0;
+    name: string = "";
+    
+    constructor(id:number, name:string){
+        this.id = id;
+        this.name = name;
+    }
 }

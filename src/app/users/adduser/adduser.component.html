@@ -22,19 +22,32 @@
         <label for="email">Email</label>  <br/> 
         <input type="text" id="email" name="email" [ngModel]="email">
     </div>
-            
+<br>
+
      <!--
     <div>
         <label for="rolename">Department</label>  <br/> 
         <input type="text" id="rolename" name="department" [ngModel]="rolename">
     </div>
 -->
-        
+<div>
+    <label for="role">Role</label>  
+<select [(ngModel)]= "roleId">
+    <option *ngFor="let role of role" value="{{role.id}}">{{role.name}}</option>
+    s
+</select>
+    <p>{{roleId}}</p>
+</div>      
+<br>
+<br>
     <div>       
     <button type="submit" [disabled]="!f.valid">Submit</button>
     </div>
   
 </div>
 </form> 
+
+
+
 </div>
 <router-outlet></router-outlet>

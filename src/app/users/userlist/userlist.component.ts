@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Users } from 'src/app/models/users';
 import { UserService } from 'src/app/services/userservice';
 
@@ -10,8 +11,9 @@ import { UserService } from 'src/app/services/userservice';
 })
 export class UserlistComponent implements OnInit {
   users!: Users[];
-
-  constructor(private userserv:UserService) { }
+  user!:Users;
+  errorMsg: any;
+  constructor(private userserv:UserService,private router:Router) { }
  
 
  
@@ -29,7 +31,31 @@ export class UserlistComponent implements OnInit {
     ); 
 
   }
-  
+
+  public getUserById(id:number):void{
+    this.userserv.getUserById(id).subscribe(
+      (data)=> {
+        this.user = data;
+      },
+      (error:HttpErrorResponse) => {
+        alert(error.message);}
+      );
+    
+  }
+
+  displayUsers()
+  {
+    this.userserv.getUsers().subscribe(
+      (data) => {this.users = data; console.log(data)},
+      (error) => this.errorMsg = error,
+    )
+  }
+  deleteUser(id: number){
+    this.userserv.deleteUser(id).subscribe(
+      (data) => {console.log(data),this.displayUsers()},
+      (error) => console.log(error)
+    )
+  }
 
    
 }

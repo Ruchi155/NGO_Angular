@@ -1,8 +1,8 @@
 export class  iUserProfile{
-    id!: number; 
+    id: number = 0; 
     address1!:string;
     address2!:string;
-    CMA!:number;
+    cma!:number;
     phone!:string;
     city!:string;
     state!:string;
@@ -12,7 +12,7 @@ export class  iUserProfile{
     constructor(id: number,
         address1:string,
         address2:string,
-        CMA:number,
+        cma:number,
         phone:string,
         city:string,
         state:string,

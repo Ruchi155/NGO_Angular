@@ -8,7 +8,8 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class UserProfileService {
+export class UserProfileService
+ {
   private url = environment.apiProfileUrl;
   constructor(private http:HttpClient) { }
   getAllUserProfiles():Observable<iUserProfile[]>{

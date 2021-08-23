@@ -22,12 +22,13 @@ import { PagenotFoundComponent } from './pagenot-found-component/pagenot-found-c
 import { DonationsComponent } from './donations/donations.component';
 import { ProfileManagementComponent } from './profile-management/profile-management.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
-import { DeleteuserComponent } from './users/deleteuser/deleteuser.component';
 import { DeletedonationComponent } from './donations/deletedonation/deletedonation.component';
 import { UpdatedonationComponent } from './donations/updatedonation/updatedonation.component';
 import { AdddonationComponent } from './donations/adddonation/adddonation.component';
 import { FormsModule } from '@angular/forms';
 import { UserlistComponent } from './users/userlist/userlist.component';
+import { DonationslistComponent } from './donationslist/donationslist.component';
+import { UpdateuserComponent } from './users/updateuser/updateuser.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +41,12 @@ import { UserlistComponent } from './users/userlist/userlist.component';
     PagenotFoundComponent,
     DonationsComponent,
     AdduserComponent,
-    DeleteuserComponent,
+    UpdateuserComponent,
     DeletedonationComponent,
     UpdatedonationComponent,
     AdddonationComponent,
     UserlistComponent,
+    DonationslistComponent,
   ],
   imports: [
     BrowserModule,
