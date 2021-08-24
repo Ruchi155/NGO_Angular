@@ -16,7 +16,9 @@ export class UserlistComponent implements OnInit {
   constructor(private userserv:UserService,private router:Router) { }
  
 
- 
+  public onSelectUserDetail(user:any){
+    this.router.navigate(["/users/", user.id]);
+  }
   ngOnInit(): void 
   {
     this.getUsers();

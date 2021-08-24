@@ -5,6 +5,7 @@
 
     <tr>
         <th> ID </th>
+        <th> UserID</th>
         <th>Address1</th>
         <th>Address2</th>
         <th>Phone</th>
@@ -12,12 +13,12 @@
         <th>State</th>
         <th>Zipcode</th>
         <th>Country</th>
-        <th>*Urbaniztion</th>
+        <th>*Urbaniztion</th> 
     </tr>
 
     <tbody>
         <tr *ngFor="let p of profiles ">
-            <td>{{p.id}}</td>
+            <td>{{p.id}}</td> 
             <td> {{p.address1 }}</td>
             <td> {{p.address2}}</td>
             <td> {{p.phone}}</td>
@@ -26,11 +27,11 @@
             <td> {{p.zipcode}} </td>
             <td> {{p.country}}</td>
             <td> {{p.urbanization}}</td>
-            <td><button (click)="onUpdateButton(p)"> Update</button>
+            <td>
+                <button (click)="onUpdateButton(p)"> Update</button>
             </td>
         </tr>
-    </tbody>
-
+    </tbody> 
 </table>
 
 <router-outlet>

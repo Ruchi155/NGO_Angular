@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { UserProfileService } from './../services/user-profile.service';
 import { iUserProfile } from './../models/iUserProfile';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-update-profile',
@@ -46,6 +47,8 @@ export class UpdateProfileComponent implements OnInit {
         this.errorMsg = error;
         console.log(error);
       } 
+      ,
+      ()=> this.router.navigate(['/profiles'])
     )
   }
 }

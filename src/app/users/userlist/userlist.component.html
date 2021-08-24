@@ -1,7 +1,8 @@
 
 <br>
 <br><h4 align="center">User Management</h4>
-<table border="2" align="center" class="table table-danger table-striped table-bordered">
+<table  class="table table-danger table-striped table-bordered">
+   <thead>
     <tr>
         <td align="center">Id</td>
         <td align="center">FirstName</td>
@@ -12,17 +13,21 @@
         <td align="center">Options</td>
         
     </tr>
-
+</thead>
+<tbody>
     <tr *ngFor="let user of users">
 
-        <td  align="center">{{user.id}}</td>
+        <td align="center">
+            <a  class="btn btn-primary" (click)="onSelectUserDetail(user)"> {{user.id}}  
+            </a> 
+        </td>
         <td  align="center">{{user.firstName}}</td>
         <td  align="center">{{user.lastName}}</td>
         <td  align="center">{{user.email}}</td>
         
         <td align="center">
             <tr *ngFor="let r of user.roles">
-                <td align="center">{{r?.name}}</td>
+                <td>{{r?.name}}</td>
             </tr>
         </td>
         <td align="center">{{user.userProfile?.id}}</td>
@@ -34,7 +39,7 @@
        
     </tr>
 
-
+</tbody>
 </table>
     <br>
     <br>

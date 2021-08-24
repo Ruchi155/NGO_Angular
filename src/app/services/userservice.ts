@@ -19,7 +19,7 @@ export class UserService {
 
   public getUserById(id:number): Observable<any>
   {
-    return this.http.get(`${this.apiServerUrl}/${id}`)
+    return this.http.get(`${this.apiServerUrl}/finduser/${id}`)
   }
 
   public getUserByEmail(email:string):Observable<any>

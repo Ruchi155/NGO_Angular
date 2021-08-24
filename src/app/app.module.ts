@@ -17,15 +17,17 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 
 import { HomeComponent } from './home/homepage.component';
-import { LoginComponent } from './login/login.component';
-import { PagenotFoundComponent } from './pagenot-found-component/pagenot-found-component.component';
+import { LoginComponent } from './login/login.component'; 
 import { DonationsComponent } from './donations/donations.component';
 import { ProfileManagementComponent } from './profile-management/profile-management.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './users/userlist/userlist.component';
 import { UpdateuserComponent } from './users/updateuser/updateuser.component';
 import { DonationlistComponent } from './donations/donationlist/donationlist.component';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
+import { MakeDonationComponent } from './make-donation/make-donation.component';
+import { MatFormField } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,14 @@ import { DonationlistComponent } from './donations/donationlist/donationlist.com
     ProfileManagementComponent,
     UpdateProfileComponent,
     HomeComponent,
-    LoginComponent,
-    PagenotFoundComponent,
+    LoginComponent, 
     DonationsComponent,
     AdduserComponent,
     UpdateuserComponent,
     UserlistComponent,
     DonationlistComponent,
+    UserDetailComponent,
+    MakeDonationComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,7 @@ import { DonationlistComponent } from './donations/donationlist/donationlist.com
     MatListModule,
     MatButtonModule,
     MatCardModule,
-    MatTableModule, 
+    MatTableModule,  ReactiveFormsModule
 
   ],
   providers: [],

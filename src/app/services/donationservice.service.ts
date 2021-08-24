@@ -17,6 +17,9 @@ export class DonationService {
   getAllDonation():Observable<Donation[]>{
     return this.http.get<Donation[]>(this.url).pipe(catchError(this.errorHandler));
   }  
+  getAllDonationByUserId(id:number):Observable<Donation[]>{
+    return this.http.get<Donation[]> (this.url+ "user/"+id);
+  }
   errorHandler(error: HttpErrorResponse){
     return throwError(error.message || "Server Error")
   }

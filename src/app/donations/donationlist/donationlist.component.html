@@ -2,15 +2,15 @@
 <br>
 <br>
 <table border="1" align="center" class="table table-danger table-striped table-bordered">
-
-    <tr>
-        <th> ID </th>
-        <th> Date</th>
-        <th>Amount</th>
-        <th>DonationType</th>
-        <th>UserID</th>  
-    </tr>
-
+    <thead>
+        <tr>
+            <th> ID </th>
+            <th> Date</th>
+            <th>Amount</th>
+            <th>DonationType</th>
+            <th>UserID</th>  
+        </tr>
+    </thead>
     <tbody>
         <tr *ngFor="let d of donations">
             <td>{{d.id}} </td>
@@ -24,6 +24,4 @@
     </tbody>
 
 </table>
-<router-outlet>
-
-</router-outlet>
+<router-outlet> </router-outlet>
