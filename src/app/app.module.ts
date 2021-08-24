@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { UserlistComponent } from './users/userlist/userlist.component';
 import { UpdateuserComponent } from './users/updateuser/updateuser.component';
 import { DonationlistComponent } from './donations/donationlist/donationlist.component';
+import { NamePipe } from './pipes/name.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DonationlistComponent } from './donations/donationlist/donationlist.com
     UpdateuserComponent,
     UserlistComponent,
     DonationlistComponent,
+    NamePipe,
   ],
   imports: [
     BrowserModule,

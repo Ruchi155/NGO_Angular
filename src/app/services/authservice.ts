@@ -18,8 +18,6 @@ export class AuthguardService {
       this.isloggedIn=false;
   }
 
-  
-
   login(username: string, password:string) {
       //Assuming users are provided the correct credentials.
       //In real app you will query the database to verify.

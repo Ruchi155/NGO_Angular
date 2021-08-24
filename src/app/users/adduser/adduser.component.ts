@@ -19,6 +19,7 @@ export class AdduserComponent implements OnInit {
   firstName: string='';
   lastName: string='';
   email: string='';
+  password: string='';
   //department: string='';
 
   constructor(private userserv:UserService, private router:Router) { }
