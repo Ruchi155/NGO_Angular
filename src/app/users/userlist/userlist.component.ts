@@ -57,8 +57,13 @@ export class UserlistComponent implements OnInit {
       (data) => {console.log(data),this.displayUsers()},
       (error) => console.log(error)
     )
+    
+  }
+  updateUser(userId:number){
+    this.router.navigate(['users/updateuser', userId]);
   }
 
+  
   /* onSelect(){
     this.router.navigate(['/users/adduser']);
   }

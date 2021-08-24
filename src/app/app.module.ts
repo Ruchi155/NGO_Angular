@@ -21,13 +21,14 @@ import { LoginComponent } from './login/login.component';
 import { DonationsComponent } from './donations/donations.component';
 import { ProfileManagementComponent } from './profile-management/profile-management.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
-import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './users/userlist/userlist.component';
 import { UpdateuserComponent } from './users/updateuser/updateuser.component';
 import { DonationlistComponent } from './donations/donationlist/donationlist.component';
-import { UserDetailComponent } from './users/user-detail/user-detail.component';
+ 
+import { NamePipe } from './pipes/name.pipe'; 
 import { MakeDonationComponent } from './make-donation/make-donation.component';
-import { MatFormField } from '@angular/material/form-field';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,8 +43,11 @@ import { MatFormField } from '@angular/material/form-field';
     UpdateuserComponent,
     UserlistComponent,
     DonationlistComponent,
+ 
     UserDetailComponent,
-    MakeDonationComponent
+    MakeDonationComponent,
+ 
+    NamePipe, 
   ],
   imports: [
     BrowserModule,

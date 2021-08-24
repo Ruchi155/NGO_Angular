@@ -18,7 +18,9 @@ export class MakeDonationComponent implements OnInit {
     DonationDetails: this.fb.array([])
   }); 
   DonationDetailFormArray!: FormArray;
-  
+  project1! : number;
+  project2! : number;
+  project3! : number;
   ngOnInit(): void {
     let arr: any[] = [];
     this.donationTypeSerice.getAllDonationType().subscribe(
@@ -31,8 +33,7 @@ export class MakeDonationComponent implements OnInit {
         this.DonationForm = this.fb.group({
           DonationDetails :this.fb.array(arr)
         })  
-        this.DonationDetailFormArray = this.DonationForm.get('DonationDetails') as  FormArray;
-        console.log(this.DonationDetailFormArray.at(0))
+        this.DonationDetailFormArray = this.DonationForm.get('DonationDetails') as  FormArray; 
       } 
     ) 
   }
@@ -45,7 +46,9 @@ export class MakeDonationComponent implements OnInit {
   }
   
   onSubmit(){
-    console.log(this.DonationForm.value)
+    console.log(`project1: ${this.project1}`);
+    console.log(`project2: ${this.project2}`);
+    console.log(`project2: ${this.project3}`);
   }
 
 }

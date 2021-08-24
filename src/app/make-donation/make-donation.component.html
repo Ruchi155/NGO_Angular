@@ -1,13 +1,20 @@
-<!-- <div>
-    <form [formGroup] ="DonationForm" (ngSubmit) = "onSubmit()">
-        
-        <table>
-            <tr formArrayName="DonationDetails" *ngFor ="let eachDonation of  DonationDetailFormArray let i = index">
-                <div [formGroup]="eachDonation"]>
 
-                </div>
-                <input  type="text" formControlName="amount" placeholder="Total Student" />
-            </tr>
-        </table>
-    </form>
-</div>> -->
+<table> 
+<tbody>
+        <tr   >
+            <td>
+                Food For Student  <input  type="text"   placeholder="Total Student" [(ngModel)] = "project1"/>
+            </td>
+            <td>
+                Covid 19  <input  type="text  " placeholder="Total Student" [(ngModel)] = "project2"/>
+            </td>
+            <td>
+                Run for Money  <input  type="text"  placeholder="Total Student"[(ngModel)] = "project3" />
+            </td>
+           
+        </tr>
+</tbody>
+</table> 
+<button (click) = "onSubmit()">
+    Submit
+</button>

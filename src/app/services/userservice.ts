@@ -19,12 +19,13 @@ export class UserService {
 
   public getUserById(id:number): Observable<any>
   {
-    return this.http.get(`${this.apiServerUrl}/finduser/${id}`)
+ 
+    return this.http.get(`${this.apiServerUrl}/finduser/${id}`); 
   }
 
   public getUserByEmail(email:string):Observable<any>
   {
-    return this.http.get(`${this.apiServerUrl}/${email}`)
+    return this.http.get(`${this.apiServerUrl}/${email}`);
   }
   
   public getUsers():Observable<Users[]>{
@@ -35,10 +36,14 @@ export class UserService {
     return this.http.post(`${this.apiServerUrl}/adduser`,user);
   }
 
-  public updateUser(user:Users):Observable<Users>
+  public updateUser(id:number, user:Users):Observable<Users>{
+    console.log(this.apiServerUrl+"updateuser/"+id , user);
+    return this.http.put<Users >(this.apiServerUrl+"/updateuser/"+id , user);
+  }
+  /* public updateUser(user:Users):Observable<Users>
   {
     return this.http.put<Users>(`${this.apiServerUrl}/updateuser`,user);
-  }
+  } */
 
   public deleteUser(userid:number):Observable<void>{
     return this.http.delete<void>(`${this.apiServerUrl}/deleteuser/${userid}`);
