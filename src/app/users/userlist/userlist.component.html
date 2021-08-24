@@ -1,15 +1,16 @@
 
 <br>
 <br><h4 align="center">User Management</h4>
-<table border="2" align="center" class="table table-danger table-striped table-bordered">
-    <tr>
-        <td align="center">Id</td>
-        <td align="center">FirstName</td>
-        <td align="center">LastName</td>
-        <td align="center">Email </td>
-        <td align="center">Role </td>
-        <td align="center">ProfileID </td>
-        <td align="center">Options</td>
+<br>
+<table border="4" class ="table-borderd" align="center" cellspacing="3" cellpadding="4">
+    <tr >
+        <th align="center">Id</th>
+        <th align="center">FirstName</th>
+        <th align="center">LastName</th>
+        <th align="center">Email </th>
+        <th align="center">Role </th>
+        <th align="center">ProfileID </th>
+        <th align="center">Options</th>
         
     </tr>
 
@@ -29,7 +30,7 @@
     
 
         <!--<td  align="center">{{role.name}}</td> -->
-        <td align="center" appCustomdir><button type= "button" class="btn btn-edit" routerLink="/users/updateuser/id">Edit</button></td>
+        <td align="center" appCustomdir><button type= "button" class="btn btn-edit" (click) = updateUser(user.id)  >Edit</button></td>
         <td align="center"><button type= "button" class="btn btn-delete"  (click)="deleteUser(user.id)">Delete</button></td>
        
     </tr>

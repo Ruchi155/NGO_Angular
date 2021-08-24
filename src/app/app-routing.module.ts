@@ -19,7 +19,7 @@ const routes: Routes = [
   
   {path:'users', component: UsersComponent},
   {path:'users/adduser', component: AdduserComponent},
-                {path:'updateuser/id', component:UpdateuserComponent},
+  {path:'users/updateuser/:id', component:UpdateuserComponent},
 
   {path:'donations',component: DonationsComponent},
   {path:'profiles', component: ProfileManagementComponent},

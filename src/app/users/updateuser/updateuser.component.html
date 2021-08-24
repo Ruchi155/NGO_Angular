@@ -1,3 +1,55 @@
-<p>updateuser works!</p>
+<br>
+<br>
+<h4>Update User</h4><br>
+<div class="container" > 
+    <form #updateUserForm="ngForm" (ngSubmit)="update(user)" novalidate>
+        <div>
+            <div>
+                <label for="id">ID</label><br/>
+                <input readonly="readonly" type="text" #id="ngModel" class="form-control" name="id" [(ngModel)]="user.id">
+                </div> 
+                
+            <div>
+                <label for="firstName">FirstName</label>   <br/>
+                <input type="text" id="firstName" #id="ngModel" class="form-control" name="firstName" [(ngModel)]="user.firstName">
+            </div>
+                    
+                
+            <div>
+                <label for="lastName">lastName</label>  <br/> 
+                <input type="text" id="lastName" #id="ngModel" class="form-control" name="lastName" [(ngModel)]="user.lastName">
+            </div>
+        
+            <div>
+                <label for="email">Email</label>  <br/> 
+                <input type="text" id="email"  #id="ngModel" class="form-control"name="email" [(ngModel)]="user.email">
+            </div>
+            <br>
+    
+         <!--
+        <div>
+            <label for="rolename">Department</label>  <br/> 
+            <input type="text" id="rolename" name="department" [ngModel]="rolename">
+        </div>
+    -->
+    
+    
+      <!-- <label for="role">Role</label>  
+        // <select [(ngModel)] = "{{user.roles}}"> 
+        <select [(ngModel)]="roleId" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let r of role" value="{{r.name}}">{{r.name}}</option>
+        
+    </select>
+       //<p>{{roleId}}</p>-->
+    </div>      
 
-<router-outlet></router-outlet> -->
+        <br>
+    
+        <div>       
+            <button type="submit" [disabled]="updateUserForm.form.invalid" >Submit</button>
+        </div> 
+    </form>  
+</div>
+    <router-outlet></router-outlet>
+
+ 

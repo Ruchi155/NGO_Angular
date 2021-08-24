@@ -1,10 +1,15 @@
-<div class="container">
+
+
+<br>
+<br>
+<h4>Add New User</h4><br>
+<div class="container" >
     
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 <div>
     <div>
         <label for="id">ID</label><br/>
-        <input type="text" id="id" name="id" [(ngModel)]="id">
+        <input type="text" id="id" name="id" [ngModel]="id">
     </div> 
         
     <div>
@@ -34,12 +39,13 @@
 
     <label for="role">Role</label>  
     <!-- <select [(ngModel)] = "{{user.roles}}"> -->
-<select [(ngModel)]="roleId" [ngModelOptions]="{standalone: true}">
-    <option *ngFor="let role of role" value="{{role.name}}">{{role.id}}</option>
+    <select [(ngModel)]="roleId" [ngModelOptions]="{standalone: true}">
+    <option *ngFor="let r of role" value="{{r.name}}">{{r.name}}</option>
     
 </select>
-    <p>{{roleId}}</p>
-</div>      
+   <!--<p>{{roleId}}</p>-->
+</div>    
+
 
 <br>
 <br>

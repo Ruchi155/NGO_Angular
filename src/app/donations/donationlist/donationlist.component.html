@@ -1,27 +1,27 @@
 
 <br>
 <br>
-<table border="1" align="center" class="table table-danger table-striped table-bordered">
-
+<h4 align="center">Donation Management</h4>
+<br>
+<table border="4" class ="table-borderd" align="center" cellspacing="3" cellpadding="4">
     <tr>
-        <th> ID </th>
-        <th> Date</th>
-        <th>Amount</th>
-        <th>DonationType</th>
-        <th>UserID</th>  
+        <th align="center"> ID </th>
+        <th align="center">UserID</th>
+        <th align="center"> Date</th>
+        <th align="center">Amount</th>
+        <th align="center">DonationType</th>
+          
     </tr>
-
-    <tbody>
         <tr *ngFor="let d of donations">
-            <td>{{d.id}} </td>
-            <td> {{d.date}}</td>
-            <td> {{d.amount }}</td>
-            <td> {{d.donationType?.name}} </td>
-            <td> {{d.user?.id}}</td> 
-            <td> <button> Update</button>
-            </td>
+            <td align="center">{{d.id}} </td>
+            <td align="center"> {{d.user?.id}}</td> 
+            <td align="center"> {{d.date}}</td>
+            <td align="center"> {{d.amount }}</td>
+            <td align="center"> {{d.donationType?.name}} </td>
+            
+            
         </tr>
-    </tbody>
+    
 
 </table>
 <router-outlet>

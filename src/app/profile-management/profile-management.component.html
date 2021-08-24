@@ -1,35 +1,39 @@
 
 <br>
 <br>
-<table border="1" align="center" class="table table-danger table-striped table-bordered">
+<h4 align="center">Profile Management</h4>
+<br>
+<table border="4" class ="table-borderd" align="center" cellspacing="3" cellpadding="4">
 
     <tr>
-        <th> ID </th>
-        <th>Address1</th>
-        <th>Address2</th>
-        <th>Phone</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zipcode</th>
-        <th>Country</th>
-        <th>*Urbaniztion</th>
+        <th align="center"> ID </th>
+        <th align="center">Address1</th>
+        <th align="center">Address2</th>
+        <th align="center">Phone</th>
+        <th align="center">City</th>
+        <th align="center">State</th>
+        <th align="center">Zipcode</th>
+        <th align="center">Country</th>
+        <th align="center">*Urbaniztion</th>
+        
+        <th align="center">Options</th>
     </tr>
 
-    <tbody>
+   
         <tr *ngFor="let p of profiles ">
-            <td>{{p.id}}</td>
-            <td> {{p.address1 }}</td>
-            <td> {{p.address2}}</td>
-            <td> {{p.phone}}</td>
-            <td> {{p.city}}</td>
-            <td> {{p.state}} </td>
-            <td> {{p.zipcode}} </td>
-            <td> {{p.country}}</td>
-            <td> {{p.urbanization}}</td>
-            <td><button (click)="onUpdateButton(p)"> Update</button>
+            <td align="center">{{p.id}}</td>
+            <td align="center"> {{p.address1 }}</td>
+            <td align="center"> {{p.address2}}</td>
+            <td align="center"> {{p.phone}}</td>
+            <td align="center"> {{p.city}}</td>
+            <td align="center"> {{p.state}} </td>
+            <td align="center"> {{p.zipcode}} </td>
+            <td align="center"> {{p.country}}</td>
+            <td align="center"> {{p.urbanization}}</td>
+            <td align="center"><button type= "button" class="btn btn-edit" (click)="onUpdateButton(p)"> Edit</button>
             </td>
         </tr>
-    </tbody>
+   
 
 </table>
 
