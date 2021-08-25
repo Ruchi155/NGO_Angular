@@ -1,8 +1,12 @@
 
-<br>
-<br><h4 align="center">User Management</h4>
- 
-<table  class="table table-danger table-striped table-bordered">
+ <h2 align="center">User Management</h2>
+ <div align = "center">
+
+
+<div  style="width: fit-content" align = "center" >
+    <button  type="button" class="btn btn-primary" routerLink="/users/adduser">Add User</button>
+</div>
+<table align="center" class="table table-dark  table-striped table-bordered" style=" width: fit-content;">
    <thead>
     <tr>
         <td align="center">Id</td>
@@ -12,7 +16,7 @@
         <td align="center">Role </td>
         <td align="center">ProfileID </td>
         <td align="center">Options</td>
- 
+        <td align="center">Option</td>
         
     </tr>
 </thead>
@@ -20,7 +24,7 @@
     <tr *ngFor="let user of users">
  
         <td align="center">
-            <a  class="btn btn-primary" (click)="onSelectUserDetail(user)"> {{user.id}}  
+            <a  class="btn btn-info" (click)="onSelectUserDetail(user)"> {{user.id}}  
             </a> 
         </td>
         <td  align="center">{{user.firstName}}</td>
@@ -37,17 +41,14 @@
     
 
         <!--<td  align="center">{{role.name}}</td> -->
-        <td align="center" appCustomdir><button type= "button" class="btn btn-edit"  (click) = updateUser(user.id) >Edit</button></td>
-        <td align="center"><button type= "button" class="btn btn-delete"  (click)="deleteUser(user.id)">Delete</button></td>
+        <td align="center" appCustomdir><button type= "button" class="btn btn-warning"  (click) = updateUser(user.id) >Edit</button></td>
+        <td align="center"><button type= "button" class="btn btn-danger"  (click)="deleteUser(user.id)">Delete</button></td>
        
     </tr>
 
 </tbody>
 </table>
-    <br>
-    <br>
-    <div class="text-right">
-        <button type="button" class="btn btn-primary" routerLink="/users/adduser">Add User</button>
-    </div>
+</div>
+
   
 <router-outlet></router-outlet>

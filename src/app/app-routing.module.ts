@@ -20,15 +20,16 @@ const routes: Routes = [
   
  
   {path:'users', component: UsersComponent},
-  {
-    path:'users/:id',component:UserDetailComponent
-  },
+  
   {path:'users/adduser', component: AdduserComponent},
+  {
+    path:'users/:id',component:UserDetailComponent,
+  },
   {path:'users/updateuser/:id', component:UpdateuserComponent,canActivate:[AdminrouteguardService]},
 
   {path:'donations',component: DonationsComponent},
   {
-  path: 'donations/makeDonation', component:MakeDonationComponent
+  path: 'donations/makeDonation/:id', component:MakeDonationComponent
   },
   {path:'profiles', component: ProfileManagementComponent},
  

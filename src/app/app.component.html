@@ -1,19 +1,65 @@
-<div class ="container" style="background-color: #c5c5ee; height:50px; padding: 1rem;">
-    <h3 class = "d-flex justify-content-center">NGO Donation</h3>
-    <div><nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a routerLink="/home" routerLinkActive="active" class="nav-link active">Home</a>
-            <a routerLink="/users" routerLinkActive="active" class="nav-link active">UserView</a>
-            <a routerLink="/donations" routerLinkActive="active" class="nav-link active">Donations</a>
-            <a routerLink="/profiles" routerLinkActive="active" class="nav-link active">UserProfiles</a>
-            <a routerLink="/login" routeLinkActive="active" class="nav-link active">Login</a>
-            
-            <a routerLink="/home" routeLinkActive="active" class="nav-link active" click="logout()">Logout</a>
-        </div>
-      
-    </div>
-  </nav>
-<router-outlet></router-outlet>
+ 
+ <div class="back-ground"> 
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+              <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  <strong class="fs-5 d-none d-sm-inline">NGO Donation</strong>
+              </a>
+              <style>
+               
+                  .nav-item>a:hover {
+                      color: red;
+                  }
+                  /*code to change background color*/
+                  
+                
+              </style>
+              <ul class="nav   navbar-nav  nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                  <li class="nav-item   ">
+                      <button href="#" class=" btn nav-link    " routerLink="/home" routerLinkActive="active">
+                          <i class="fs-4 bi-house"></i> <span class="sr-only ms-1 d-none d-sm-inline">Home</span>
+                      </button>
+                  </li>
 
- </div>
+                  <li class="nav-item  ">
+                      <button href="#" class="  btn  nav-link   " routerLink="/profiles" routerLinkActive="active">
+                          <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Profile</span></button>
+                  </li>
+                  <li class="nav-item   ">
+                    <button href="#" class=" btn nav-link    " routerLink="/users" routerLinkActive="active">
+                        <i class="fs-4 bi-house"></i> <span class="sr-only ms-1 d-none d-sm-inline">User Management</span> 
+                    </button>
+                  </li>
+                  <li class="nav-item   ">
+                    <button href="#" class=" btn nav-link    " routerLink="/donations" routeLinkActive="active">
+                        <i class="fs-4 bi-house"></i> <span class="sr-only ms-1 d-none d-sm-inline">Donations</span>
+                    </button>
+                  </li>
+                  <li class="nav-item   ">
+                    <button href="#" class=" btn nav-link    " routerLink="/profiles" routeLinkActive="active">
+                        <i class="fs-4 bi-house"></i> <span class="sr-only ms-1 d-none d-sm-inline">Profiles</span>
+                    </button>
+                  </li>
+                  <li class="nav-item   ">
+                    <button href="#" class=" btn nav-link    " routerLink="/login" routeLinkActive="active">
+                        <i class="fs-4 bi-house"></i> <span class="sr-only ms-1 d-none d-sm-inline">Login</span>
+                    </button>
+                  </li>
+                  <li class="nav-item   ">
+                    <button href="#" class=" btn nav-link    " routerLink="/home" routeLinkActive="active">
+                        <i class="fs-4 bi-house"></i> <span class="sr-only ms-1 d-none d-sm-inline click = logout()">Logout</span>
+                    </button>
+                  </li> 
+              </ul>
+               
+             
+
+          </div>
+      </div>
+      <div class="col py-3">
+          <router-outlet></router-outlet>
+      </div>
+  </div>
+</div></div>

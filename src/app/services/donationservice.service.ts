@@ -29,10 +29,11 @@ export class DonationService {
   deleteUserProfileById(id:number){
     return this.http.delete(this.url+"deletedonation/"+id);
   }
-  updateUserProfile (id:number, profile:iUserProfile):Observable<iUserProfile>{
-    console.log(this.url+"updatedonation/"+id , profile);
-    return this.http.put<iUserProfile >(this.url+"updatedonation/"+id , profile);
+  createDonation(donation:Donation, userId:number):Observable<Donation>{
+    console.log("UPloading data to server... " + donation.donationType.name);
+    return this.http.post<Donation>(this.url+ "adddonation/"+userId, donation).pipe(catchError(this.errorHandler));
   }
+
 
 
 }

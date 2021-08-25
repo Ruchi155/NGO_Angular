@@ -1,6 +1,6 @@
  
-<p>UserID: {{user.id}}</p>
-<p>ProfileID: {{user.userProfile.id}}</p>
+<p>UserID: {{user?.id}}</p>
+<p>ProfileID: {{user?.userProfile?.id}}</p>
 <tr *ngFor="let r of user.roles">
     <td align="center"> Role : {{r?.name}}</td>
 </tr>
@@ -45,5 +45,5 @@
   
 </table>
 
-<a class="btn btn-primary" (click) = goToMakeDonation()>Make Donation Here (Continue Button)</a>
+<a class="btn btn-primary" (click) = goToMakeDonation(user.id)>Make Donation Here (Continue Button)</a>
  

@@ -3,18 +3,15 @@ import { Users } from "./users";
 
 export class Donation{ 
 
-	public  id:number = 0;  
-	public  date : Date = new Date(); 
+	public  id!:number ;  
+	public  date !: Date  ; 
 	public   amount:number = 0.0; 
  
 	public  donationType!: DonationType;  
 	 
 	public   user!:Users ;
-    constructor(id:number, date: Date, amount:number, donationType:DonationType, user:Users){
-        this.id = id;
-        this.date = date;
+    constructor(  amount:number, donationType:DonationType ){ 
         this.amount = amount;
-        this.donationType = donationType;
-        this.user = user;
+        this.donationType = donationType; 
     }
 }

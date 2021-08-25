@@ -1,11 +1,9 @@
-import { Donation } from './donation';
+ 
 export class DonationType { 
     id!:number;
-    name!:string;
-    donation!:Donation;
-    constructor(id:number, name:string, donation:Donation){
+    name!:string; 
+    constructor(id:number, name:string ){
         this.id = id;
-        this.name=name;
-        this.donation = donation;
+        this.name=name; 
     }
 }

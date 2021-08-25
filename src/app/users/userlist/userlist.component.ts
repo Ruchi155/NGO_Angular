@@ -64,8 +64,8 @@ export class UserlistComponent implements OnInit {
   }
 
   
-  /* onSelect(){
+   onSelect(){
     this.router.navigate(['/users/adduser']);
   }
-    */
+     
 }

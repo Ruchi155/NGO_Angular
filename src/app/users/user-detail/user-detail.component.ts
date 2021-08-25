@@ -10,31 +10,26 @@ import { UserService } from './../../services/userservice';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
-  private userId!:any;
-  public user!:Users;
-  private errorMsg:any;
+  private userId:string|null = "";
+  public user!:Users; 
   public donations:any;
   constructor(private route: ActivatedRoute, private router:Router, private UserService :UserService, private donationService:DonationService) { }
 
   ngOnInit(): void {
-    this.userId = this.route.paramMap.subscribe(
+     this.route.paramMap.subscribe(
       (data) => {
         this.userId= data.get("id"); 
         
-        this.UserService.getUserById(this.userId).subscribe(
+        this.UserService.getUserById(<number><any>this.userId  ).subscribe(
           (data) =>this.user = data
         )
-        this.donationService.getAllDonationByUserId(this.userId).subscribe(
+        this.donationService.getAllDonationByUserId(<number><any>this.userId).subscribe(
           data => this.donations = data
         )
       }
     ) 
-  }
-  
-  createDonation(Donation:any){
-
-  }
-  goToMakeDonation(){
-    this.router.navigate(['donations/makeDonation']);
+  } 
+  goToMakeDonation(userId:number){
+    this.router.navigate(['donations/makeDonation',<number><any>userId]);
   }
 }

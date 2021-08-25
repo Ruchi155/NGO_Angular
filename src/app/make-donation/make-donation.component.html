@@ -1,20 +1,24 @@
-
-<table> 
-<tbody>
-        <tr   >
-            <td>
-                Food For Student  <input  type="text"   placeholder="Total Student" [(ngModel)] = "project1"/>
-            </td>
-            <td>
-                Covid 19  <input  type="text  " placeholder="Total Student" [(ngModel)] = "project2"/>
-            </td>
-            <td>
-                Run for Money  <input  type="text"  placeholder="Total Student"[(ngModel)] = "project3" />
-            </td>
-           
-        </tr>
-</tbody>
-</table> 
-<button (click) = "onSubmit()">
-    Submit
-</button>
+ 
+    <h2 align = "center">
+        Type your money on Funding 
+    </h2>
+    <table align="center" > 
+        <tbody>
+                <tr *ngFor = "let donationForm of DonationsForm; let i = index"  >
+                
+                    <td>
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon3">{{donationForm.donationType?.name}}</span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" [(ngModel)] = "donationForm.amount">
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table> 
+    <div align = "center"> 
+        <button class  = "btn btn-primary" (click) = "onSubmit()" >
+            Submit
+        </button>  
+    </div>
+   

@@ -32,8 +32,7 @@ export class UpdateProfileComponent implements OnInit {
     );
   }
   update(userProfile:any)
-  {
-    console.log(`runing update function and calling api --- From update-profile.ts`);
+  { 
     this.userProfileSerivce.updateUserProfile(this.userProfileId, this.userProfile).subscribe(
       (data) => {
         console.log(this.userProfile.id)
