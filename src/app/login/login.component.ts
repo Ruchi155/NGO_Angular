@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthguardService } from '../services/authservice'; 
-import { UserService } from 'src/app/services/userservice';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/loginservice.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,13 +9,10 @@ import { UserService } from 'src/app/services/userservice';
 export class LoginComponent implements OnInit {
 
   invalidCredentialMsg: string | undefined;
-  useremail!:string  ;
+  username!:string  ;
   password!:string  ;    
   message: any;
-  constructor(private authService: AuthguardService, 
-    private router: Router, 
-    private activatedRoute:ActivatedRoute,
-    private userService :UserService) {
+  constructor(private loginservice: LoginService,private router:Router) {
   }
 
   ngOnInit() { 
@@ -24,10 +20,12 @@ export class LoginComponent implements OnInit {
 
  
   doLogin(){
-    let resp = this.userService.login(this.useremail,this.password) .subscribe(
-      data =>
-      { this.message =  data;}
-    )
+    let resp = this.loginservice.login(this.username,this.password) 
+    resp.subscribe(data=>{console.log(data)})
+    console.log(this.username);
+    console.log(this.password);
+    this.router.navigate(["home"]);
+
   }
 
  

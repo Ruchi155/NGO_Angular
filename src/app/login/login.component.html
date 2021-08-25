@@ -4,12 +4,13 @@
 
 <div class= "container" align="center">
 
- <form #loginForm="ngForm" (ngSubmit)="doLogin()">
+ <form action="login" method="post">
   
-   <p>User Name: <input type='text'  name='username' ngModel></p>
-   <p>Password: <input type="password"  name="password" ngModel></p>
-   <p><button type="submit">Submit</button></p> 
+   <p>User Name: <input type='text'  name='username' id='email' [(ngModel)]="username" placeholder="username"></p>
+   <p>Password: <input type="password"  name="password"  id='password' [(ngModel)]="password" placeholder="password"></p>
+   <p><button type="submit" name ="login" id ="go" value="login" (click)="doLogin()">Login</button></p> 
  </form>
+ 
 </div>
 <br>
 <!--
