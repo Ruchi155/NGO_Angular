@@ -1,0 +1,71 @@
+<h2 align = "center" class = " order">
+    ORDER SUMMARY
+</h2>
+<hr/>
+
+<div class = "   d-flex  flex-row justify-content-center">
+ 
+<div class = "left-side ">
+    <div>
+        <table  align="center" class="table table-dark table-striped  table-bordered table-curved order-summary"   >
+            <thead>
+                <tr  align = "center">
+                <th>Item Description</th>
+                <th   >Quanity</th>
+                <th  >Price</th>
+                <th  >Total</th>
+            </tr>
+            </thead>
+            <tbody *ngFor ="let item of DonationCartItems, let i = index" >
+                <tr>
+                <td>
+                    {{item.donation.donationType?.name}}
+                </td>
+                <td align = "center">
+                    {{item.quanity}}
+                    <a href=""  (click) = "removeItem(i)"> remove</a>
+                </td>
+                <td  align = "center">
+                    ${{item.donation.amount}}
+                </td>
+                <td  align = "center">
+                    ${{item.donation.amount*item.quanity}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="" (click) = "emptyCart()">Empty cart</a>
+    </div>
+</div>
+
+ 
+     
+ <div  align ="center" class =" right-side "  >
+    <h6 class = "fst-italic  " >
+         {{totalItem}} ITEM IN CART
+    </h6>
+    <hr/>
+    <div class=" ">
+        <a>CONTINUE SHOPING </a>
+    </div>
+    <hr/>
+    <h5 class="  ">
+        ORDER SUMMARY
+    </h5>
+    <hr/>
+    <p class="h6 fst-italic" >
+        ITEM SUBTOTAL:   ${{totalPrice}}
+    </p>
+    <p class="h7 fst-italic" >
+       Tax Calculated upon final checkout
+    </p>
+    <button class = "btn btn-danger">
+        PROCEED 
+        To CHECKOUT
+    </button>
+
+ </div>
+
+</div>

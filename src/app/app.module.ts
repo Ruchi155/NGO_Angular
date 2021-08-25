@@ -29,7 +29,8 @@ import { DonationlistComponent } from './donations/donationlist/donationlist.com
 import { NamePipe } from './pipes/name.pipe'; 
 import { MakeDonationComponent } from './make-donation/make-donation.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
-
+import { CartComponent } from './cart/cart.component'; 
+import { DataService } from './services/data-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,10 +48,12 @@ import { UserDetailComponent } from './users/user-detail/user-detail.component';
     UserDetailComponent,
     MakeDonationComponent,
  
-    NamePipe, 
+    NamePipe,
+      CartComponent, 
   ],
   imports: [
-    BrowserModule,
+
+  BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
     FormsModule, BrowserAnimationsModule,    MatToolbarModule,
@@ -62,7 +65,7 @@ import { UserDetailComponent } from './users/user-detail/user-detail.component';
     MatTableModule,  ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent], 
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

@@ -32,7 +32,7 @@ export class DonationService {
   createDonation(donation:Donation, userId:number):Observable<Donation>{
     console.log("UPloading data to server... " + donation.donationType.name);
     return this.http.post<Donation>(this.url+ "adddonation/"+userId, donation).pipe(catchError(this.errorHandler));
-  }
+  } 
 
 
 

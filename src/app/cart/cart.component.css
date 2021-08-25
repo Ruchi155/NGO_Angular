@@ -1,0 +1,13 @@
+.right-side{
+ padding-left: 1cm;
+ padding-top:1em;
+}
+.order{
+    width: 100%;
+    background-color:#dc143c ;
+    align-items: center;
+}
+.order-summary{
+     
+    width:fit-content;
+}

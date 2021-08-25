@@ -5,7 +5,7 @@ export class Donation{
 
 	public  id!:number ;  
 	public  date !: Date  ; 
-	public   amount:number = 0.0; 
+	public   amount:number = 0; 
  
 	public  donationType!: DonationType;  
 	 

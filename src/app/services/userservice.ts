@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import {HttpClient, HttpErrorResponse} from '@angular/common/http'
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http'
 import { Users } from '../models/users';
 import { environment } from 'src/environments/environment';
 import { Role } from '../models/role';
@@ -16,7 +16,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   formData!: Users;
-
+  public login(username: string, password:string){
+    const headrs = new HttpHeaders({Authorization: 'Basic '+ btoa(username+":"+password)});
+    // this.http.get(this.apiServerUrl+ "/login", {headers, responseType:'text' as 'json'});
+  }
   public getUserById(id:number): Observable<any>
   {
  

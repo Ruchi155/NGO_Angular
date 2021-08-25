@@ -30,7 +30,7 @@ export class AuthguardService {
   }
 
   isAdminUser():boolean {
-      if (this.userName=='Admin' && this.password=='Admin') {
+      if (this.userName.toUpperCase()=='ADMIN' && this.password.toUpperCase()=='ADMIN') {
           return true; 
       }
       return false;
