@@ -7,11 +7,7 @@
     
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 <div>
-    <div>
-        <label for="id">ID</label><br/>
-        <input type="text" id="id" name="id" [ngModel]="id">
-    </div> 
-        
+    
     <div>
         <label for="firstName">FirstName</label>   <br/>
         <input type="text" id="firstName" name="firstName" [ngModel]="firstName">
@@ -24,7 +20,7 @@
     </div>
     <div>
         <label for="password">Password</label>  <br/> 
-        <input type="text" id="password" name="password" [ngModel]="password">
+        <input type="password" id="password" name="password" [ngModel]="password">
     </div>
 
     <div>
@@ -32,13 +28,7 @@
         <input type="text" id="email" name="email" [ngModel]="email">
     </div>
 <br>
-
-     <!--
-    <div>
-        <label for="rolename">Department</label>  <br/> 
-        <input type="text" id="rolename" name="department" [ngModel]="rolename">
-    </div>
--->
+ 
 
 
     <label for="role">Role</label>  
@@ -46,20 +36,13 @@
     <select [(ngModel)]="roleId" [ngModelOptions]="{standalone: true}">
     <option *ngFor="let r of role" value="{{r.name}}">{{r.name}}</option>
     
-</select>
-   <!--<p>{{roleId}}</p>-->
-</div>    
-
-
+</select> 
+</div>     
 <br>
 <br>
     <div>       
     <button type="submit" [disabled]="!f.valid">Submit</button>
-    </div>
-  
-
-</form> 
-
-
+    </div> 
+</form>  
 </div>
 <router-outlet></router-outlet>

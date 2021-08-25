@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthguardService } from '../services/authservice';
-import { NgForm } from '@angular/forms';
-import { Users } from '../models/users';
-import { Role } from '../models/role';
-import { UserProfileService } from '../services/user-profile.service';
-import { iUserProfile } from '../models/iUserProfile';
-import { newArray } from '@angular/compiler/src/util';
+import { AuthguardService } from '../services/authservice'; 
+import { UserService } from 'src/app/services/userservice';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,34 +10,24 @@ import { newArray } from '@angular/compiler/src/util';
 export class LoginComponent implements OnInit {
 
   invalidCredentialMsg: string | undefined;
-  username:string | undefined;
-  password:string | undefined;
-  retUrl:string | null="home";
-  userprofile = new iUserProfile(0,"n/a","n/a",0,"n/a","n/a","n/a",0,"n/a","n/a");
-  role: Array<Role>= new Array <Role>();
-user = new Users(0,"n/a","n/a","n/a","n/a",this.userprofile,this.role);
+  useremail!:string  ;
+  password!:string  ;    
+  message: any;
   constructor(private authService: AuthguardService, 
     private router: Router, 
-    private activatedRoute:ActivatedRoute) {
+    private activatedRoute:ActivatedRoute,
+    private userService :UserService) {
   }
 
-  ngOnInit() {
-    // this.activatedRoute.queryParamMap
-    //     .subscribe(params => {
-    // this.retUrl = params.get('retUrl'); 
-    // console.log( 'LoginComponent/ngOnInit '+ this.retUrl);
-    // });
+  ngOnInit() { 
   }
 
-  onFormSubmit(loginForm: any) {
-    this.authService.login(loginForm.value.username, loginForm.value.password).subscribe(data => {
-    console.log( 'return to '+ this.retUrl);
-    if (this.retUrl!=null) {
-        this.router.navigate( [this.retUrl]);
-    } else {
-        this.router.navigate( ['home']);
-    }
-    });
+ 
+  doLogin(){
+    let resp = this.userService.login(this.useremail,this.password) .subscribe(
+      data =>
+      { this.message =  data;}
+    )
   }
 
  

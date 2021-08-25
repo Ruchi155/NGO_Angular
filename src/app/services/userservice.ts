@@ -14,11 +14,10 @@ export class UserService {
   private apiServerUrl= environment.apiUserUrl;
 
   constructor(private http: HttpClient) { }
-
-  formData!: Users;
-  public login(username: string, password:string){
-    const headrs = new HttpHeaders({Authorization: 'Basic '+ btoa(username+":"+password)});
-    // this.http.get(this.apiServerUrl+ "/login", {headers, responseType:'text' as 'json'});
+ 
+  public login(username: string, password:string):Observable<any>{
+    const headers = new HttpHeaders({Authorization: 'Basic '+ btoa(username+":"+password)});
+     return this.http.get(environment.apiBaseUrl+ "/login", {headers,responseType: 'text' as 'json'});
   }
   public getUserById(id:number): Observable<any>
   {
