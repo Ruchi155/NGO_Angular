@@ -14,8 +14,8 @@ import { UpdateuserComponent } from './users/updateuser/updateuser.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component'; 
  
-const routes: Routes = [
-  {path:'', redirectTo: "home",pathMatch:"full"},
+const routes: Routes = [ 
+  {path:'', redirectTo: "home",pathMatch:"full"},  
   { path:'home',component: HomeComponent},
   {path:'login', component: LoginComponent},
   //{path:'profiles', component: ProfileManagementComponent},
@@ -35,9 +35,7 @@ const routes: Routes = [
   {
   path: 'donations/makeDonation/:id', component:MakeDonationComponent
   },
-  {path:'profiles', component: ProfileManagementComponent},
- 
-
+  {path:'profiles', component: ProfileManagementComponent}, 
   //{ path:'profile/update', component:UpdateProfileComponent},
   {path:'profiles/update/:id', component:UpdateProfileComponent }, 
 ];

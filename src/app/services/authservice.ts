@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router'; 
+ 
 import { UserService } from './userservice'; 
   
 import { Observable, of } from 'rxjs';
@@ -33,15 +33,15 @@ export class AuthService {
         catchError(this.handleError('login', []))
       );
   }
+
+
   logout(): Observable<any> {
     return this.http.get<any>(apiUrl + 'signout')
       .pipe(
         tap(_ => this.isLoggedIn = false),
         catchError(this.handleError('logout', []))
       );
-  }
-
-  
+  } 
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

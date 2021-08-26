@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthguardService } from '../services/authservice'; 
-import { UserService } from 'src/app/services/userservice';
+import { Component, OnInit } from '@angular/core'; 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,25 +10,25 @@ export class LoginComponent implements OnInit {
   useremail!:string  ;
   password!:string  ;    
   message: any;
-  constructor(private authService: AuthguardService, 
-    private router: Router, 
-    private activatedRoute:ActivatedRoute,
-    private userService :UserService) {
-  }
+  // constructor(private authService: AuthguardService, 
+  //   private router: Router, 
+  //   private activatedRoute:ActivatedRoute,
+  //   private userService :UserService) {
+  // }
 
   ngOnInit() { 
   }
 
  
-  doLogin(loginForm:any){
-    console.log(this.useremail);
-    let resp = this.userService.login(this.useremail,this.password) .subscribe(
-      data =>
-      { this.message =  data;
-        console.log(this.message);
-      }
-    )
-  }
+  // doLogin(loginForm:any){
+  //   console.log(this.useremail);
+  //   let resp = this.userService.login(this.useremail,this.password) .subscribe(
+  //     data =>
+  //     { this.message =  data;
+  //       console.log(this.message);
+  //     }
+  //   )
+  // }
 
  
 }
