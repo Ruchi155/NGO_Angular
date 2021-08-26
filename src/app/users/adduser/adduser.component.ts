@@ -26,14 +26,7 @@ export class AdduserComponent implements OnInit {
 
   ngOnInit(): void {
   }
-/* onSubmit(form:NgForm)
-{
-  this.userserv.addUser(form.value).subscribe(data => {
-    this.resetForm(form);
-    alert(data);
-  }) 
-}*/
-
+ 
 //For Dropdown
   public role: Array<Role> = [{id:1,name:'Admin'},{id:2,name:'User'}];
   public roleId!: string;

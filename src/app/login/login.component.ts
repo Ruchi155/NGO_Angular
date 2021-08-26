@@ -23,10 +23,13 @@ export class LoginComponent implements OnInit {
   }
 
  
-  doLogin(){
+  doLogin(loginForm:any){
+    console.log(this.useremail);
     let resp = this.userService.login(this.useremail,this.password) .subscribe(
       data =>
-      { this.message =  data;}
+      { this.message =  data;
+        console.log(this.message);
+      }
     )
   }
 

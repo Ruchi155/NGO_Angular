@@ -11,7 +11,7 @@ export class CartComponent implements OnInit {
   constructor( ) { }
   DonationCartItems:DonationCartItem[] = new Array<DonationCartItem>(); 
   donations !:Donation[];  
-  userJustChooses!:Donation[];
+  userJustChooses :  Array<Donation> = new Array<Donation>();
   totalPrice:number = 0;
   totalItem:number = 0;
   ngOnInit(): void {
@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
     this.userJustChooses = JSON.parse(localStorage.getItem('userJustChooses')|| '{}');
     let cart = JSON.parse(localStorage.getItem('cart')|| '{}');
     let lengthCart =cart.length;
-   
+   this.userJustChooses = <Array<Donation>>this.userJustChooses;
     console.log(lengthCart);
     if(this.userJustChooses.length == undefined){
       //if user dont choose any thing then dont check any thing, leave that cart like that
@@ -32,12 +32,13 @@ export class CartComponent implements OnInit {
     }
     else{
       if(lengthCart == undefined) {
-        console.log("run that line");
+        console.log("run that line" + this.userJustChooses);
         //if cart does not have any item , just add whatever user just choose to there
         for(let i = 0; i < this.userJustChooses.length;i++){
           this.DonationCartItems.push(new DonationCartItem(this.userJustChooses[i]));
         }
         localStorage.setItem("cart",JSON.stringify(this.DonationCartItems));
+        console.log(this.DonationCartItems);
         localStorage.removeItem("userJustChooses");
       }
       else{

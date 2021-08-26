@@ -56,6 +56,7 @@ export class MakeDonationComponent implements OnInit {
    
   }
   ngOnDestroy(){
+    console.log(`destroy make dontion and set localStorage for userJust choose`);
     localStorage.setItem("userJustChooses", JSON.stringify(this.donations));
   }
   

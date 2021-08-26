@@ -1,9 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
+ 
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module'; 
 import { UsersComponent } from './users/users.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
@@ -31,6 +30,9 @@ import { MakeDonationComponent } from './make-donation/make-donation.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { CartComponent } from './cart/cart.component'; 
 import { DataService } from './services/data-service';
+  
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptor } from './HttpInterceptor/Interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,8 +53,8 @@ import { DataService } from './services/data-service';
     NamePipe,
       CartComponent, 
   ],
-  imports: [
-
+  imports: [ 
+  
   BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
@@ -65,7 +67,13 @@ import { DataService } from './services/data-service';
     MatTableModule,  ReactiveFormsModule
 
   ],
-  providers: [DataService],
+  providers: [DataService,
+              {
+              provide: HTTP_INTERCEPTORS,
+              useClass: TokenInterceptor,
+              multi: true
+              }
+            ],
   bootstrap: [AppComponent], 
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

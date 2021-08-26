@@ -9,8 +9,8 @@ export const environment = {
   apiUserUrl: 'http://localhost:8090/users',
   
   apiDonationUrl:'http://localhost:8090/donations/',
-  apiDonationTypeUrl:'http://localhost:8090/donationTypes/'
-
+  apiDonationTypeUrl:'http://localhost:8090/donationTypes/',
+  apiAuthUrl:'http://localhost:8090/api/auth/'
 };
 
 /*

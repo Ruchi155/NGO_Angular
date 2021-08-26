@@ -1,45 +1,59 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs'; 
-import { UserService } from './userservice';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router'; 
+import { UserService } from './userservice'; 
+  
+import { Observable, of } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators'; 
+import { environment } from 'src/environments/environment';
+
+const apiUrl = environment.apiAuthUrl;
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthguardService {
+export class AuthService {
 
-  private isloggedIn: boolean;
-  userName!: string;
-  password!: string;
+  isLoggedIn = false;
+  redirectUrl!: string;
+
+  constructor(private http: HttpClient) { }
+
+  login(data: any): Observable<any> {
+    return this.http.post<any>(apiUrl + 'login', data)
+      .pipe(
+        tap(_ => this.isLoggedIn = true),
+        catchError(this.handleError('login', []))
+      );
+  }
+  register(data: any): Observable<any> {
+    return this.http.post<any>(apiUrl + 'register', data)
+      .pipe(
+        tap(_ => this.log('login')),
+        catchError(this.handleError('login', []))
+      );
+  }
+  logout(): Observable<any> {
+    return this.http.get<any>(apiUrl + 'signout')
+      .pipe(
+        tap(_ => this.isLoggedIn = false),
+        catchError(this.handleError('logout', []))
+      );
+  }
+
   
-  constructor(private userserv: UserService,private http:HttpClient) {
-      this.isloggedIn=false;
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      console.error(error); // log to console instead
+      this.log(`${operation} failed: ${error.message}`);
+
+      return of(result as T);
+    };
   }
 
-  login(username: string, password:string) {
-      //Assuming users are provided the correct credentials.
-      //In real app you will query the database to verify.
-      this.isloggedIn=true;
-      this.userName=username;
-      this.password=password;
-      return of(this.isloggedIn);
+  private log(message: string) {
+    console.log(message);
   }
-
-  isUserLoggedIn(): boolean {
-      return this.isloggedIn;
-  }
-
-  isAdminUser():boolean {
-      if (this.userName.toUpperCase()=='ADMIN' && this.password.toUpperCase()=='ADMIN') {
-          return true; 
-      }
-      return false;
-  }
-
-  logoutUser(): void{
-    this.isloggedIn = false;
-  }
-
-
-
 }
