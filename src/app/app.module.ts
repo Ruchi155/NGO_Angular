@@ -24,7 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './users/userlist/userlist.component';
 import { UpdateuserComponent } from './users/updateuser/updateuser.component';
 import { DonationlistComponent } from './donations/donationlist/donationlist.component';
- 
+import { FormBuilder } from '@angular/forms';
 import { NamePipe } from './pipes/name.pipe'; 
 import { MakeDonationComponent } from './make-donation/make-donation.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
@@ -33,6 +33,9 @@ import { DataService } from './services/data-service';
   
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './HttpInterceptor/Interceptor';
+import { AppComponent } from './app.component';
+import { RegisterComponent } from './register/register.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,25 +49,33 @@ import { TokenInterceptor } from './HttpInterceptor/Interceptor';
     UpdateuserComponent,
     UserlistComponent,
     DonationlistComponent,
- 
+   
     UserDetailComponent,
     MakeDonationComponent,
  
     NamePipe,
-      CartComponent, 
+      CartComponent,
+      RegisterComponent, 
   ],
   imports: [ 
-  
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
-    HttpClientModule, 
-    FormsModule, BrowserAnimationsModule,    MatToolbarModule,
+    HttpClientModule,
+    ReactiveFormsModule, 
+    FormsModule, 
+    FormBuilder,
+    BrowserAnimationsModule,    
+    MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatButtonModule,
     MatCardModule,
-    MatTableModule,  ReactiveFormsModule
+    MatTableModule,   
+    MatTableModule,  
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule, 
 
   ],
   providers: [DataService,

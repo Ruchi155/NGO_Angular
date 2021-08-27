@@ -68,4 +68,10 @@ export class UserlistComponent implements OnInit {
     this.router.navigate(['/users/adduser']);
   }
      
+
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['login']);
+  }
 }

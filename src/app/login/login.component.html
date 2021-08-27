@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <br><br><h3 align="center">Login Form</h3>
 <br>
 
@@ -9,22 +9,36 @@
    <p>User Name: <input type='text'  name='username' id='email' [(ngModel)]="username" placeholder="username"></p>
    <p>Password: <input type="password"  name="password"  id='password' [(ngModel)]="password" placeholder="password"></p>
    <p><button type="submit" name ="login" id ="go" value="login" (click)="doLogin()">Login</button></p> 
- </form>
+ </form>-->
  
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <mat-card class="example-card">
+    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput type="email" placeholder="Email" formControlName="email"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Please enter your email</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" placeholder="Password" formControlName="password"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Please enter your password</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+        <button type="submit" [disabled]="!loginForm.valid" mat-flat-button color="primary">Login</button>
+      </div>
+      <div class="button-row">
+        <button type="button" mat-flat-button color="primary" (click)="register()">Register</button>
+      </div>
+    </form>
+  </mat-card>
 </div>
-<br> -->
-<!--
-<div class="container">
-  <form #loginform="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
-  <div class="form-group">
-    <label for="email">UserName</label>
-    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email">
-  </div><br>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" [(ngModel)]="user.password">
-  </div><br>
-  
-  <button type="submit" class="btn btn-info">Login</button>
-</form>
-</div>--> 
+<router-outlet></router-outlet>

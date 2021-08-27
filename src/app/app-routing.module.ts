@@ -7,6 +7,8 @@ import { HomeComponent } from './home/homepage.component';
 import { LoginComponent } from './login/login.component'; 
 import { MakeDonationComponent } from './make-donation/make-donation.component'; 
 import { ProfileManagementComponent } from './profile-management/profile-management.component'; 
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './routeguard/auth.guard';
 import { AdminrouteguardService } from './services/adminrouteguard.service'; 
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
@@ -18,18 +20,23 @@ const routes: Routes = [
   {path:'', redirectTo: "home",pathMatch:"full"},  
   { path:'home',component: HomeComponent},
   {path:'login', component: LoginComponent},
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: { title: 'Register' }
+  },
   //{path:'profiles', component: ProfileManagementComponent},
   {
     path:'cart',component:CartComponent
   },
  
-  {path:'users', component: UsersComponent},
+  {path:'users', component: UsersComponent,canActivate:[AuthGuard]},
   
   {path:'users/adduser', component: AdduserComponent},
   {
     path:'users/:id',component:UserDetailComponent,
   },
-  {path:'users/updateuser/:id', component:UpdateuserComponent,canActivate:[AdminrouteguardService]},
+  {path:'users/updateuser/:id', component:UpdateuserComponent},
 
   {path:'donations',component: DonationsComponent},
   {
