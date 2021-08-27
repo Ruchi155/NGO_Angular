@@ -16,10 +16,11 @@ import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component'; 
  
 const routes: Routes = [ 
+  
   {path:'', redirectTo: "home",pathMatch:"full"},  
   { path:'home',component: HomeComponent},
   {path:'login', component: LoginComponent},
-  
+  {path:'register', component:RegisterComponent},
   //{path:'profiles', component: ProfileManagementComponent},
   {
     path:'cart',component:CartComponent
