@@ -2,9 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';  
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators'; 
-import { environment } from 'src/environments/environment';
 
-const apiUrl = environment.apiAuthUrl;
+const apiUrl = 'http://localhost:8090/api/auth/';
 
 @Injectable({
   providedIn: 'root'

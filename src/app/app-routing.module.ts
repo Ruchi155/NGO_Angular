@@ -9,7 +9,6 @@ import { MakeDonationComponent } from './make-donation/make-donation.component';
 import { ProfileManagementComponent } from './profile-management/profile-management.component'; 
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './routeguard/auth.guard';
-import { AdminrouteguardService } from './services/adminrouteguard.service'; 
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { AdduserComponent } from './users/adduser/adduser.component';
 import { UpdateuserComponent } from './users/updateuser/updateuser.component';
@@ -20,11 +19,7 @@ const routes: Routes = [
   {path:'', redirectTo: "home",pathMatch:"full"},  
   { path:'home',component: HomeComponent},
   {path:'login', component: LoginComponent},
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: { title: 'Register' }
-  },
+  
   //{path:'profiles', component: ProfileManagementComponent},
   {
     path:'cart',component:CartComponent

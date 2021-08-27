@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MyErrorStateMatcher } from '../MyErrorStateMatcher';
 import { AuthService } from '../services/authservice';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,23 +12,16 @@ import { AuthService } from '../services/authservice';
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm!: FormGroup;
+  
   firstName = '';
   lastName ='';
   email = '';
-  password = '';
-  isLoadingResults = false;
-  matcher = new MyErrorStateMatcher();
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) { }
+  password = ''; 
+  constructor( private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
 
-    this.registerForm = this.formBuilder.group({
-      'firstName' : [null, Validators.required],
-      'lastName':[null,Validators.required],
-      'email' : [null, Validators.required],
-      'password' : [null, Validators.required],
-    });
+     
   }
 
   onFormSubmit(form: NgForm) {

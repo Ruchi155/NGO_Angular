@@ -24,18 +24,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './users/userlist/userlist.component';
 import { UpdateuserComponent } from './users/updateuser/updateuser.component';
 import { DonationlistComponent } from './donations/donationlist/donationlist.component';
-import { FormBuilder } from '@angular/forms';
+
 import { NamePipe } from './pipes/name.pipe'; 
 import { MakeDonationComponent } from './make-donation/make-donation.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { CartComponent } from './cart/cart.component'; 
-import { DataService } from './services/data-service';
-  
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { TokenInterceptor } from './HttpInterceptor/Interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; 
+import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,12 +46,10 @@ import { RegisterComponent } from './register/register.component';
     UpdateuserComponent,
     UserlistComponent,
     DonationlistComponent,
-   
     UserDetailComponent,
     MakeDonationComponent,
- 
-    NamePipe,
       CartComponent,
+      NamePipe,
       RegisterComponent, 
   ],
   imports: [ 
@@ -63,7 +58,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     ReactiveFormsModule, 
     FormsModule, 
-    FormBuilder,
+    
     BrowserAnimationsModule,    
     MatToolbarModule,
     MatSidenavModule,
@@ -72,19 +67,17 @@ import { RegisterComponent } from './register/register.component';
     MatButtonModule,
     MatCardModule,
     MatTableModule,   
-    MatTableModule,  
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule, 
+
 
   ],
-  providers: [DataService,
+  providers: [
               {
               provide: HTTP_INTERCEPTORS,
               useClass: TokenInterceptor,
               multi: true
               }
             ],
+
   bootstrap: [AppComponent], 
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
