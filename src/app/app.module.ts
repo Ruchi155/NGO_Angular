@@ -18,8 +18,7 @@ import {MatTableModule} from '@angular/material/table';
 import { HomeComponent } from './home/homepage.component';
 import { LoginComponent } from './login/login.component'; 
 import { DonationsComponent } from './donations/donations.component';
-import { ProfileManagementComponent } from './profile-management/profile-management.component';
-import { AdduserComponent } from './users/adduser/adduser.component';
+import { ProfileManagementComponent } from './profile-management/profile-management.component'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './users/userlist/userlist.component';
 import { UpdateuserComponent } from './users/updateuser/updateuser.component';
@@ -33,6 +32,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
+import { DonationTypeComponent } from './donation-type/donation-type.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,8 +41,7 @@ import { RegisterComponent } from './register/register.component';
     UpdateProfileComponent,
     HomeComponent,
     LoginComponent, 
-    DonationsComponent,
-    AdduserComponent,
+    DonationsComponent, 
     UpdateuserComponent,
     UserlistComponent,
     DonationlistComponent,
@@ -50,7 +49,8 @@ import { RegisterComponent } from './register/register.component';
     MakeDonationComponent,
       CartComponent,
       NamePipe,
-      RegisterComponent, 
+      RegisterComponent,
+      DonationTypeComponent, 
   ],
   imports: [ 
     BrowserModule,

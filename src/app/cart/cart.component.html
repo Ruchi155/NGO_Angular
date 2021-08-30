@@ -16,14 +16,18 @@
                 <th  >Total</th>
             </tr>
             </thead>
-            <tbody *ngFor ="let item of DonationCartItems, let i = index" >
+            <tbody *ngFor ="let item of cart, let i = index" >
                 <tr>
                 <td>
                     {{item.donation.donationType?.name}}
                 </td>
                 <td align = "center">
-                    {{item.quanity}}
-                    <!-- <a href=""  (click) = "removeItem(i)"> remove</a> -->
+                    <div class = " d-flex flex-row justify-content-evenly align-items-center">
+                    <div class = "quanity">
+                        {{item.quanity}}
+                    </div>
+                     <button class = "btn btn-warning " (click) = 'removeItem(i)'>   remove</button>  
+                    </div>
                 </td>
                 <td  align = "center">
                     ${{item.donation.amount}}
@@ -35,9 +39,9 @@
             </tbody>
         </table>
     </div>
-    <!-- <div>
-        <a href="" (click) = "emptyCart()">Empty cart</a>
-    </div> -->
+      <div>
+        <button class = "btn btn-dark" href="" (click) = "emptyCart()">Empty cart</button>
+    </div>  
 </div>
 
  
@@ -48,7 +52,7 @@
     </h6>
     <hr/>
     <div class=" ">
-        <a>CONTINUE SHOPING </a>
+        <a (click) = "onContinueShoping()">CONTINUE SHOPING </a>
     </div>
     <hr/>
     <h5 class="  ">
@@ -61,7 +65,7 @@
     <p class="h7 fst-italic" >
        Tax Calculated upon final checkout
     </p>
-    <button class = "btn btn-danger">
+    <button class = "btn btn-danger" (click) = "onSaveDonation()">
         PROCEED 
         To CHECKOUT
     </button>

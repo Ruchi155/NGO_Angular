@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/models/users';
 import { UserService } from 'src/app/services/userservice';
+import { AuthService } from './../../services/authservice';
 
 @Component({
   selector: 'app-userlist',
@@ -13,7 +14,7 @@ export class UserlistComponent implements OnInit {
   users!: Users[];
   user!:Users;
   errorMsg: any;
-  constructor(private userserv:UserService,private router:Router) { }
+  constructor(private userserv:UserService,private router:Router, private AuthService:AuthService) { }
  
 
   public onSelectUserDetail(user:any){

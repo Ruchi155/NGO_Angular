@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdduserComponent } from './adduser.component';
+import { DonationTypeComponent } from './donation-type.component';
 
-describe('AdduserComponent', () => {
-  let component: AdduserComponent;
-  let fixture: ComponentFixture<AdduserComponent>;
+describe('DonationTypeComponent', () => {
+  let component: DonationTypeComponent;
+  let fixture: ComponentFixture<DonationTypeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdduserComponent ]
+      declarations: [ DonationTypeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdduserComponent);
+    fixture = TestBed.createComponent(DonationTypeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

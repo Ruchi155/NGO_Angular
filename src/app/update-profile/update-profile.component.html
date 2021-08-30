@@ -1,6 +1,6 @@
 <mat-card style="width: 400px;">
     <h2>Edit userProfile</h2>
-    <form #updateProfileForm="ngForm" (ngSubmit)="update( userProfile)" novalidate>
+    <form #updateProfileForm="ngForm" (ngSubmit)="continue( userProfile)" novalidate>
 
         <div class="form-group">
             <label>Address1</label>
@@ -58,12 +58,12 @@
             <input type="text" #urbanization="ngModel" class="form-control" name="urbanization" [(ngModel)]="userProfile.urbanization">
 
         </div>
-
-        <button mat-flat-button color="accent" [disabled]="updateProfileForm.form.invalid" type="submit">Update form</button>
+        
+        <button mat-flat-button color="accent" [disabled]="updateProfileForm.form.invalid" type="submit">Continue</button>
+        <button class = "btn btn-danger"  color="accent"  type="submit" (click) = "cancel()">Cancel</button>
     </form>
 </mat-card>
-<br>
-
+ 
 <div class="alert alert-danger" *ngIf="errorMsg">
     {{errorMsg}}
 </div>

@@ -13,7 +13,15 @@ export class AppComponent {
 constructor(private authserv: AuthService,private route: Router){
 
 }
- 
+logout() {
+  localStorage.removeItem('token')
+  this.authserv.isLoggedIn = false;
+  this.authserv.userRole = "";
+  this.route.navigate(['home']);
+}
+ isLogin(){
+   return this.authserv.isLogin();
+ }
 
 }
 

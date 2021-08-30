@@ -1,0 +1,31 @@
+
+ <h2 align="center">Donation Event</h2>
+ <div align = "center">
+
+
+ 
+<table align="center" class="table table-dark  table-striped table-bordered" style=" width: fit-content;">
+   <thead>
+    <tr>
+        <td align="center">Event Name</td>
+      
+        
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let dt of donationTypes">
+ 
+       
+        <td  align="center">{{dt.name}}</td>
+         
+        <!--<td  align="center">{{role.name}}</td> -->
+       
+         
+    </tr>
+
+</tbody>
+</table>
+</div>
+ <button type= "button" class="btn btn-warning"  (click) = "makeDonation()" >Make Donation</button> 
+  
+<router-outlet></router-outlet>

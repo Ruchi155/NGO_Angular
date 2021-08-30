@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { UserProfileService } from './../services/user-profile.service';
 import { iUserProfile } from './../models/iUserProfile';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from './../services/authservice';
 
 @Component({
   selector: 'app-update-profile',
@@ -15,7 +16,7 @@ export class UpdateProfileComponent implements OnInit {
   userProfile:iUserProfile = new iUserProfile(0,"n/a","n/a",0,"n/a","n/a","n/a",0,"n/a","n/a");
   errorMsg:any;
   userProfiles:any;
-  constructor( private userProfileSerivce: UserProfileService, private actRoute: ActivatedRoute, private router: Router) { }
+  constructor( private userProfileSerivce: UserProfileService, private actRoute: ActivatedRoute, private router: Router, private authService:AuthService) { }
 
   ngOnInit(): void {
     this.actRoute.paramMap.subscribe( 
@@ -31,7 +32,10 @@ export class UpdateProfileComponent implements OnInit {
       }
     );
   }
-  update(userProfile:any)
+  cancel(){
+    this.router.navigate(['home']);
+  }
+  continue(userProfile:any)
   { 
     this.userProfileSerivce.updateUserProfile(this.userProfileId, this.userProfile).subscribe(
       (data) => {
@@ -47,7 +51,10 @@ export class UpdateProfileComponent implements OnInit {
         console.log(error);
       } 
       ,
-      ()=> this.router.navigate(['/profiles'])
+      ()=> { 
+        let userId = this.authService.getUserId();
+        this.router.navigate(['donations/makeDonation', userId]);
+      }
     )
   }
 }

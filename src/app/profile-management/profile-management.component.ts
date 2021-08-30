@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserProfileService } from './../services/user-profile.service';
 import { iUserProfile } from './../models/iUserProfile';
+import { AuthService } from './../services/authservice';
 
 @Component({
   selector: 'app-profile-management',
@@ -10,7 +11,7 @@ import { iUserProfile } from './../models/iUserProfile';
 })
 export class ProfileManagementComponent implements OnInit {
 
-  constructor( private UserProfileService: UserProfileService, private router:Router, private  route:ActivatedRoute) { }
+  constructor( private UserProfileService: UserProfileService, private router:Router, private  route:ActivatedRoute, private AuthService: AuthService) { }
   profiles!: iUserProfile[];
 
   ngOnInit(): void {

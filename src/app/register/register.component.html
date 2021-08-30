@@ -1,34 +1,41 @@
 
 
-<br>
-<br>
+ 
 <h4>Register User User</h4><br>
 <div class="container" >
-    
+    <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
 <form (ngSubmit)="onFormSubmit(registration)" #registration="ngForm">
 <div>
     
     <div>
         <label for="firstName">FirstName</label>   <br/>
-        <input type="text" id="firstName" name="firstName" [ngModel]="firstName">
+        <input type="text" id="firstName" name="firstName" [ngModel]="firstName"  [errorStateMatcher]="matcher">
     </div>
             
         
     <div>
         <label for="lastName">lastName</label>  <br/> 
-        <input type="text" id="lastName" name="lastName" [ngModel]="lastName">
+        <input type="text" id="lastName" name="lastName" [ngModel]="lastName"   [errorStateMatcher]="matcher">
     </div>
     <div>
         <label for="password">Password</label>  <br/> 
-        <input type="password" id="password" name="password" data-toggle="password" [ngModel]="password">
+        <input type="password" id="password" name="password" data-toggle="password" [ngModel]="password"  [errorStateMatcher]="matcher">
     </div>
 
     <div>
         <label for="email">Email</label>  <br/> 
-        <input type="text" id="email" name="email" [ngModel]="email">
+        <input type="email" id="email" name="email" [ngModel]="email"  [errorStateMatcher]="matcher">
     </div>
-<br>
  
+    
+    <label for="role">Role</label>  
+    <!-- <select [(ngModel)] = "{{user.roles}}"> -->
+    <select [(ngModel)]="roleId" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let r of role" value="{{r.name}}">{{r.name}}</option> 
+    </select> 
 
 
     <!--<label for="role">Role</label>  
@@ -36,10 +43,8 @@
     <select [(ngModel)]="roleId" [ngModelOptions]="{standalone: true}">
     <option *ngFor="let r of role" value="{{r.name}}">{{r.name}}</option>
     
-</select>  -->
-</div>     
-<br>
-<br>
+</select>   -->
+</div>   
     <div>       
     <button type="submit">Submit</button>
     </div> 
